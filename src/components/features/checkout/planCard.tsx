@@ -1,8 +1,9 @@
 import { useQuiz } from "@/hooks/useQuiz";
-import { Button } from "./button";
+import { Button } from "../../ui/button";
 import { SubscriptionPlan } from "@/types/subscriptionPlan";
 import { motion } from "framer-motion";
 import { cardVariants } from "@/styles/animations/cardVariants";
+import { useCheckout } from "@/hooks/useChackout";
 
 interface Props {
   selectedPlan: SubscriptionPlan;
@@ -10,7 +11,8 @@ interface Props {
 
 export default function PlanCard({ selectedPlan }: Props) {
   const { name, price, period, condition } = selectedPlan;
-  const { plan, setPlan, direction } = useQuiz();
+  const { direction } = useQuiz();
+  const { plan, setPlan } = useCheckout();
 
   const handleSelectPlan = (
     plan: {

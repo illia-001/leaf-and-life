@@ -1,12 +1,12 @@
-import { Button } from "@/components/button";
-import Header from "@/components/header";
+import { Button } from "@/components/ui/button";
+import Header from "@/components/layout/header";
 import Image from "next/image";
 import Link from "next/link";
 
 import howItWorks from "@/data/howItQorks.json";
 import whyLeafAndLife from "@/data/whyLeafeAndLife.json";
-import Icon from "@/components/icon";
-import Footer from "@/components/footer";
+import Icon from "@/components/ui/icon";
+import Footer from "@/components/layout/footer";
 
 export default function Home() {
   return (

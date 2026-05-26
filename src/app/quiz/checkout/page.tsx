@@ -1,8 +1,8 @@
 "use client";
 
-import AnimateItems from "@/components/animateItems";
-import PlanList from "@/components/planList";
-import UserForm from "@/components/userForm";
+import AnimateItems from "@/components/shared/animateItems";
+import PlanList from "@/components/features/checkout/planList";
+import UserForm from "@/components/features/checkout/userForm";
 
 export default function Checkout() {
   return (

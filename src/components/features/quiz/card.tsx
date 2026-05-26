@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 import cn from "classnames";
 import React from "react";
-import Icon from "./icon";
+import Icon from "../../ui/icon";
 import { cardVariants } from "@/styles/animations/cardVariants";
 import { useQuiz } from "@/hooks/useQuiz";
 

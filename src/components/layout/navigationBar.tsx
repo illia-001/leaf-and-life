@@ -1,5 +1,5 @@
 import { IoArrowBack } from "react-icons/io5";
-import { Button } from "./button";
+import { Button } from "../ui/button";
 import { useAnswers, useQuiz } from "@/hooks/useQuiz";
 import { ItemType } from "@/types/itemType";
 import { useEffect } from "react";
@@ -17,7 +17,7 @@ export default function NavigationBar({
   buttonLabel,
   totalSteps,
 }: Props) {
-  const { step, setError, setDirection, setStep } = useQuiz();
+  const { step, setError, setStepDirection, setStep } = useQuiz();
   const answers = useAnswers(id);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export default function NavigationBar({
   const handleBack = () => {
     setError(null);
     if (step > 0) {
-      setDirection(-1);
+      setStepDirection(-1);
       setStep(step - 1);
     }
   };
@@ -39,7 +39,7 @@ export default function NavigationBar({
     }
 
     if (step < totalSteps) {
-      setDirection(1);
+      setStepDirection(1);
       setStep(step + 1);
     }
   };

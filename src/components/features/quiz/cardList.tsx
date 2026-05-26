@@ -14,7 +14,7 @@ interface Props {
 
 export const CardList: React.FC<Props> = ({ items, id }) => {
   const options = items.options;
-  const { setAnswer, setError } = useQuiz();
+  const { setQuizAnswers, setError } = useQuiz();
   const answers = useAnswers(id) || [];
 
   const handleSetAnswer = (value: string) => {
@@ -22,18 +22,18 @@ export const CardList: React.FC<Props> = ({ items, id }) => {
 
     if (items.type === ItemType.SINGLE) {
       if (answers.includes(value)) {
-        setAnswer(id, []);
+        setQuizAnswers(id, []);
       } else {
-        setAnswer(id, [value]);
+        setQuizAnswers(id, [value]);
       }
     }
 
     if (items.type === ItemType.MULTIPLE) {
       if (answers.includes(value)) {
         const actualAnswers = answers.filter((answer) => answer !== value);
-        setAnswer(id, [...actualAnswers]);
+        setQuizAnswers(id, [...actualAnswers]);
       } else {
-        setAnswer(id, [...answers, value]);
+        setQuizAnswers(id, [...answers, value]);
       }
     }
   };

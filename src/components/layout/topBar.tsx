@@ -2,23 +2,23 @@ import { useRouter } from "next/navigation";
 import { IoChevronBack, IoClose } from "react-icons/io5";
 
 import quizSteps from "@/data/quizSteps.json";
-import ProgressBar from "./progressBar";
-import Error from "./error";
+import ProgressBar from "../ui/progressBar";
+import Error from "../shared/error";
 import { useQuiz } from "@/hooks/useQuiz";
 
 export default function TopBar() {
-  const { step, setStep, setDirection } = useQuiz();
+  const { step, setStep, setStepDirection } = useQuiz();
   const router = useRouter();
   const totalSteps = quizSteps.length;
 
   const handleCloseQuiz = () => {
     router.push("/");
-    setDirection(1);
+    setStepDirection(1);
   };
 
   const handleBack = () => {
     router.push("/quiz");
-    setDirection(-1);
+    setStepDirection(-1);
     setStep(step - 1);
   };
 

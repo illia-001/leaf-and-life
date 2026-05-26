@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Noto_Serif } from "next/font/google";
 import "./globals.css";
-import Footer from "@/components/footer";
 
 const notoSans = Noto_Serif({
   variable: "--font-noto-sans",

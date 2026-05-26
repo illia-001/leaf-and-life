@@ -1,9 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
-import Loader from "./loader";
+import Loader from "../../ui/loader";
 import { IoCheckmarkDoneCircleSharp, IoClose } from "react-icons/io5";
 import { useRouter } from "next/navigation";
 import { useQuiz } from "@/hooks/useQuiz";
+import { useCheckout } from "@/hooks/useChackout";
 
 interface Props {
   isVisible: (status: boolean) => void;
@@ -12,7 +13,8 @@ interface Props {
 export default function CheckoutModal({ isVisible }: Props) {
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
-  const { setStep } = useQuiz();
+  const { resetQuizState } = useQuiz();
+  const { resetCheckoutState } = useCheckout();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -25,7 +27,8 @@ export default function CheckoutModal({ isVisible }: Props) {
   const handleCloseModal = () => {
     isVisible(false);
     router.push("/");
-    setStep(0);
+    resetCheckoutState();
+    resetQuizState();
   };
 
   return (

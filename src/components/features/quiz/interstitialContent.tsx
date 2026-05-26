@@ -1,6 +1,6 @@
 import { Interstitial } from "@/types/interstitialt";
 import Image from "next/image";
-import Icon from "./icon";
+import Icon from "../../ui/icon";
 
 export const InterstitialContent = ({ item }: { item: Interstitial }) => {
   const { title, description, image, icons } = item;

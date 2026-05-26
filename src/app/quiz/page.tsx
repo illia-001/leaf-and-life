@@ -4,12 +4,12 @@ import quizSteps from "@/data/quizSteps.json";
 import { Interstitial } from "@/types/interstitialt";
 import { Question } from "@/types/Question";
 import { useQuiz } from "@/hooks/useQuiz";
-import { QuestionContent } from "@/components/questionContent";
-import { InterstitialContent } from "@/components/interstitialContent";
-import { Preloader } from "@/components/preloader";
-import AnimateItems from "@/components/animateItems";
+import { QuestionContent } from "@/components/features/quiz/questionContent";
+import { InterstitialContent } from "@/components/features/quiz/interstitialContent";
+import { Preloader } from "@/components/ui/preloader";
+import AnimateItems from "@/components/shared/animateItems";
 import { ItemType } from "@/types/itemType";
-import NavigationBar from "@/components/navigationBar";
+import NavigationBar from "@/components/layout/navigationBar";
 
 export default function Quiz() {
   const { step } = useQuiz();

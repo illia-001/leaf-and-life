@@ -1,16 +1,18 @@
 import { IMaskInput } from "react-imask";
 import { useQuiz } from "@/hooks/useQuiz";
-import { Button } from "./button";
+import { Button } from "../../ui/button";
 
 import quizStep from "@/data/quizSteps.json";
 import PaymentForm from "./paymentForm";
 import React, { useState } from "react";
 import CheckoutModal from "./checkoutModal";
 import { UserData } from "@/types/userData";
-import Icon from "./icon";
+import Icon from "../../ui/icon";
+import { useCheckout } from "@/hooks/useChackout";
 
 export default function UserForm() {
-  const { plan, setError, userData, setUserData } = useQuiz();
+  const { setError } = useQuiz();
+  const { userData, plan, setUserData } = useCheckout();
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [userInfo, setUserInfo] = useState<UserData>(userData);
 
@@ -43,7 +45,7 @@ export default function UserForm() {
           <h1 className="text-text font-sans text-2xl text-left font-semibold min-h-16 flex items-center">
             {formData?.question}
           </h1>
-          
+
           <div className="flex flex-col gap-4 w-full">
             {fields?.map((item) => (
               <label
@@ -63,9 +65,14 @@ export default function UserForm() {
                     onChange={(event) =>
                       handleChangeData(event.target.value, item.id)
                     }
-                    value={(userInfo[item.id as keyof UserData] as string) || ""}
+                    value={
+                      (userInfo[item.id as keyof UserData] as string) || ""
+                    }
                   />
-                  <Icon iconUrl={item.icon} classNames="bg-accent peer-user-invalid:bg-error-text" />
+                  <Icon
+                    iconUrl={item.icon}
+                    classNames="bg-accent peer-user-invalid:bg-error-text"
+                  />
                 </div>
               </label>
             ))}
