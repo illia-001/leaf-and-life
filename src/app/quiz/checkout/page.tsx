@@ -7,8 +7,8 @@ import UserForm from "@/components/userForm";
 
 export default function Checkout() {
   return (
-    <div className="z-1 min-h-screen bg-primary space-y-10">
-      <div className="flex flex-col gap-4 px-4 py-8 col-span-full">
+    <div className="z-1 bg-primary flex flex-col gap-10 px-4 py-8">
+      <div className="flex flex-col gap-4 col-span-full">
         <h1 className="text-text text-3xl text-center font-sans">
           Choose your green journey
         </h1>
@@ -20,7 +20,7 @@ export default function Checkout() {
         <AnimateItems>
           <div className="grid grid-cols-1 sm:grid-cols-6 gap-4">
             {plans.map((plan) => (
-              <PlanCard key={plan.name} plan={plan} />
+              <PlanCard key={plan.name} selectedPlan={plan} />
             ))}
           </div>
         </AnimateItems>

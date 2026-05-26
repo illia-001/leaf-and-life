@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./card";
-import { useAnswers } from "@/hooks/useAnswers";
+import { useAnswers, useQuiz } from "@/hooks/useQuiz";
 import { Question } from "@/types/Question";
 
 interface Props {
@@ -10,9 +10,8 @@ interface Props {
 
 export const CardList: React.FC<Props> = ({ items, id }) => {
   const options = items.options;
-  const { setAnswer, setError } = useAnswers();
-  const answers = useAnswers((state) => state.getAnswer(id)) || [];
-  const i = useAnswers((state) => state.items);
+  const { setAnswer, setError } = useQuiz();
+  const answers = useAnswers(id) || [];
 
   const handleSetAnswer = (value: string) => {
     setError(null);
@@ -26,7 +25,6 @@ export const CardList: React.FC<Props> = ({ items, id }) => {
     }
 
     if (items.type === "multiple-choice") {
-      console.log(i);
 
       if (answers.includes(value)) {
         const actualAnswers = answers.filter((answer) => answer !== value);

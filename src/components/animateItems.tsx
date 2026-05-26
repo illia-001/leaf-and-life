@@ -1,23 +1,28 @@
-import { useAnswers } from "@/hooks/useAnswers";
+import { useQuiz } from "@/hooks/useQuiz";
 import { quizVariants } from "@/styles/animations/quizVariants";
 import { AnimatePresence, Variants, motion } from "framer-motion";
 import React from "react";
 
-export default function AnimateItems({children}: {children: React.ReactNode}) {
-  const {direction, currentStep} = useAnswers()
+export default function AnimateItems({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const { direction, step } = useQuiz();
+  
   return (
     <AnimatePresence mode="wait" custom={direction}>
-        <motion.div
-          key={currentStep}
-          custom={direction}
-          variants={quizVariants as Variants}
-          initial="initial"
-          animate="animate"
-          exit="exit"
-          className="w-full"
+      <motion.div
+        key={step}
+        custom={direction}
+        variants={quizVariants as Variants}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        className="w-full"
       >
         {children}
       </motion.div>
-      </AnimatePresence>
-  )
+    </AnimatePresence>
+  );
 }

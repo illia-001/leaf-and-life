@@ -5,20 +5,26 @@ import Link from "next/link";
 
 import howItWorks from "@/data/howItQorks.json";
 import whyLeafAndLife from "@/data/whyLeafeAndLife.json";
+import Icon from "@/components/icon";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
     <>
       <Header />
-      <div className="col-span-full flex justify-center bg-primary z-10">
-        <Image
-          width={390}
-          height={480}
-          src="https://res.cloudinary.com/dryw0xncr/image/upload/v1779798491/Intro_h1tegm.png"
-          alt="intro-image"
-          loading="eager"
-          className="md:w-120 rounded-2xl sm:rounded-full z-2"
-        />
+      <div className="col-span-full bg-primary flex justify-center z-1 ">
+        <div className="w-full sm:w-100">
+          <Image
+            width={500}
+            height={0}
+            sizes="100vw"
+            style={{ width: "100%", height: "auto" }}
+            src="https://res.cloudinary.com/dryw0xncr/image/upload/v1779798491/Intro_h1tegm.png"
+            alt="intro-image"
+            loading="eager"
+            className="sm:rounded-full z-2"
+          />
+        </div>
       </div>
       <main className="min-h-screen z-10 grid grid-cols-1 bg-primary md:gap-x-4 md:grid-cols-6  px-4 lg:px-8">
         <section className="z-2 bg-primary flex flex-col items-center px-4 py-12 gap-4 col-span-full">
@@ -41,12 +47,7 @@ export default function Home() {
           {howItWorks.map((item) => (
             <article key={item.title} className="flex flex-col items-center">
               <div className="flex items-center justify-center w-16 h-16 bg-bg-icon rounded-full mb-4">
-                <Image
-                  src={item.icon}
-                  width={30}
-                  height={30}
-                  alt={item.title}
-                />
+                <Icon iconUrl={item.icon} classNames="bg-accent" size={30} />
               </div>
               <h2 className="text-2xl text-text mb-2">{item.title}</h2>
               <p className="text-text-accent text-center">
@@ -65,7 +66,7 @@ export default function Home() {
               key={item.title}
               className="bg-secondary w-full flex flex-col p-6 rounded-3xl shadow-[0_16px_32px_-8px_#0D211926]"
             >
-              <Image src={item.icon} height={22} width={22} alt={item.icon} />
+              <Icon iconUrl={item.icon} classNames="bg-accent" />
 
               <h3 className="text-text text-sm font-semibold pt-2 font-mono">
                 {item.title}
@@ -86,6 +87,7 @@ export default function Home() {
           </Link>
         </section>
       </main>
+      <Footer />
     </>
   );
 }

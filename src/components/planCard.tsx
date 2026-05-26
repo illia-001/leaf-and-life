@@ -1,13 +1,14 @@
-import { useAnswers } from "@/hooks/useAnswers";
+import { useQuiz } from "@/hooks/useQuiz";
 import { Button } from "./button";
+import { SubscriptionPlan } from "@/types/subscriptionPlan";
 
 interface Props {
-  plan: { name: string; price: string; period: string; condition: string };
+  selectedPlan: SubscriptionPlan;
 }
 
-export default function PlanCard({ plan }: Props) {
-  const { name, price, period, condition } = plan;
-  const { currentPlan, setPlan } = useAnswers();
+export default function PlanCard({ selectedPlan }: Props) {
+  const { name, price, period, condition } = selectedPlan;
+  const { plan, setPlan } = useQuiz();
 
   const handleSelectPlan = (
     plan: {
@@ -17,11 +18,11 @@ export default function PlanCard({ plan }: Props) {
       condition: string;
     } | null,
   ) => {
-    if (currentPlan?.name === plan?.name) {
+    if (plan?.name === name) {
       setPlan(null);
+    } else {
+      setPlan(selectedPlan);
     }
-
-    setPlan(plan);
   };
 
   return (
@@ -41,9 +42,9 @@ export default function PlanCard({ plan }: Props) {
       </article>
       <Button
         onSubmit={() => handleSelectPlan(plan)}
-        color={currentPlan?.name === plan.name ? "active" : "accent"}
+        color={plan?.name === name ? "active" : "accent"}
       >
-        {currentPlan?.name === plan.name ? "Selected" : "Select Plan"}
+        {plan?.name === name ? "Selected" : "Select Plan"}
       </Button>
     </div>
   );

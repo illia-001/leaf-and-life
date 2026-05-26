@@ -8,9 +8,9 @@ export default function QuizLayout({
 }) {
 
   return (
-    <>
+    <div className="min-h-screen">
       <TopBar />
       {children}
-    </>
+    </div>
   );
 }

@@ -28,11 +28,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${notoSans.variable} ${jakartaSans.variable} bg-primary antialiased scroll-smooth`}
+      className={`${notoSans.variable} ${jakartaSans.variable} bg-primary antialiased`}
+      data-scroll-behavior="smooth"
     >
       <body className="flex flex-col max-w-7xl mx-auto ">
         {children}
-        <Footer />
       </body>
     </html>
   );

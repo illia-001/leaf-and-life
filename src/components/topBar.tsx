@@ -1,27 +1,29 @@
-import { useAnswers } from "@/hooks/useAnswers";
 import { useRouter } from "next/navigation";
 import { IoChevronBack, IoClose } from "react-icons/io5";
 
 import quizSteps from "@/data/quizSteps.json";
 import ProgressBar from "./progressBar";
 import Error from "./error";
+import { useQuiz } from "@/hooks/useQuiz";
 
 export default function TopBar() {
-  const { currentStep, setCurrentStep } = useAnswers();
+  const { step, setStep, setDirection } = useQuiz();
   const router = useRouter();
   const totalSteps = quizSteps.length;
 
   const handleCloseQuiz = () => {
     router.push("/");
+    setDirection(1);
   };
 
   const handleBack = () => {
     router.push("/quiz");
-    setCurrentStep(currentStep - 1);
+    setDirection(-1);
+    setStep(step - 1);
   };
 
   const getProgressBarWidth = () => {
-    const widthPercentage = Math.round(((currentStep + 1) / totalSteps) * 100);
+    const widthPercentage = Math.round(((step + 1) / totalSteps) * 100);
 
     return widthPercentage + "%";
   };
@@ -29,7 +31,7 @@ export default function TopBar() {
   return (
     <div className="w-full h-16 lg:h-18 bg-primary px-2 sticky top-0 z-2">
       <div className="flex justify-between items-center">
-        {currentStep + 1 === totalSteps && (
+        {step + 1 === totalSteps && (
           <button
             onClick={handleBack}
             className="text-center text-text cursor-pointer p-2"
@@ -46,7 +48,7 @@ export default function TopBar() {
         </button>
       </div>
       <ProgressBar
-        currentStep={currentStep + 1}
+        currentStep={step + 1}
         totalSteps={quizSteps.length}
         width={getProgressBarWidth()}
       />

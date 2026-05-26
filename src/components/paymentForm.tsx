@@ -18,7 +18,7 @@ export default function PaymentForm({onChange}: Props) {
           {item.label}
           <IMaskInput
             type={item.type}
-            className="h-13 w-full outline-none text-text border border-gray-400 p-2 rounded-xl user-invalid:border-red-400 user-valid:border-accent"
+            className="h-13 w-full outline-none text-text border border-gray-400 p-2 rounded-xl user-invalid:border-error-border user-valid:border-accent"
             placeholder={item.placeholder}
             minLength={item.validation.minLength}
             mask={item.validation.mask}

@@ -1,5 +1,5 @@
 import { IMaskInput } from "react-imask";
-import { useAnswers } from "@/hooks/useAnswers";
+import { useQuiz } from "@/hooks/useQuiz";
 import { Button } from "./button";
 
 import quizStep from "@/data/quizSteps.json";
@@ -7,10 +7,10 @@ import PaymentForm from "./paymentForm";
 import React, { useState } from "react";
 import CheckoutModal from "./checkoutModal";
 import { UserData } from "@/types/userData";
-import Image from "next/image";
+import Icon from "./icon";
 
 export default function UserForm() {
-  const { currentPlan, setError, userData, setUserData } = useAnswers();
+  const { plan, setError, userData, setUserData } = useQuiz();
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [userInfo, setUserInfo] = useState<UserData>(userData);
 
@@ -23,7 +23,7 @@ export default function UserForm() {
 
   const handleSumbit = (event: React.SubmitEvent) => {
     event.preventDefault();
-    if (!currentPlan) {
+    if (!plan) {
       setError("Please choose plan!");
       return;
     }
@@ -49,18 +49,10 @@ export default function UserForm() {
               className="flex flex-col gap-2 text-accent font-mono font-semibold"
             >
               {item.label}
-              <div className="flex gap-4 items-center border border-gray-400 px-2 rounded-xl">
-                  <Image
-                    src={item.icon}
-                    width={20}
-                    height={20}
-                    alt="icon"
-                    className="aspect-square"
-                  />
-
+              <div className="flex gap-2 items-center border border-gray-400 px-2 rounded-xl has-[input:user-valid]:border-accent has-[input:user-invalid]:border-error-border">
                 <IMaskInput
                   type={item.type}
-                  className="h-13 w-full md:w-100 outline-none text-text user-invalid:border-red-400 user-valid:border-accent"
+                  className="h-13 w-full md:w-100 order-2 outline-none text-text peer"
                   placeholder={item.placeholder}
                   minLength={item.validation.minLength}
                   mask={item.validation.mask}
@@ -71,11 +63,12 @@ export default function UserForm() {
                   }
                   value={userInfo[item.id as keyof UserData]}
                 />
+                <Icon iconUrl={item.icon} classNames="bg-accent peer-user-invalid:bg-error-text" />
               </div>
             </label>
           ))}
         </div>
-        <div className="flex flex-col md:items-end gap-8 mt-4 md:mt-0 md:col-span-3">
+        <div className="flex flex-col md:items-end gap-8 mt-10 md:mt-0 md:col-span-3">
           <PaymentForm onChange={handleChangeData} />
 
           <Button classname="md:w-75">Submit</Button>

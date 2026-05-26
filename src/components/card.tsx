@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import cn from "classnames";
 import React from "react";
 import Image from "next/image";
+import Icon from "./icon";
 
 interface Props {
   option: {
@@ -36,7 +37,7 @@ export const Card: React.FC<Props> = ({
     >
       <div className="flex justify-between items-center">
         <div className="bg-[#E8F3E8] size-10 rounded-xl flex justify-center items-center">
-          <Image src={icon} width={20} height={20} className="aspect-square" alt={`${value}-card-icon`} />
+          <Icon iconUrl={icon} classNames="bg-accent" />          
         </div>
 
         <div

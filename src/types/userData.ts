@@ -3,7 +3,4 @@ export interface UserData {
   email: string;
   phone: string;
   address: string;
-  cardNumber: string;
-  cardDate: string;
-  cardCvv: string;
 }
