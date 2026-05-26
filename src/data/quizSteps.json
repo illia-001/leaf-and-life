@@ -262,7 +262,7 @@
           "label": "Date",
           "placeholder": "MM / YY",
           "required": true,
-          "validation": { "mask": "00/00", "minLength": 4 }
+          "validation": { "mask": "00 / 00", "minLength": 4 }
         },
         {
           "id": "cardCvc",

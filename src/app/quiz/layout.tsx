@@ -1,5 +1,4 @@
 "use client";
-import NavigationBar from "@/components/navigationBar";
 import TopBar from "@/components/topBar";
 
 export default function QuizLayout({
