@@ -6,19 +6,23 @@
     "options": [
       {
         "value": "Direct",
-        "label": "🌞 Direct sunlight (south-facing windows, lots of light all day)"
+        "label": "🌞 Direct sunlight (south-facing windows, lots of light all day)",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779801795/sun-2-svgrepo-com_m59vnc.svg"
       },
       {
         "value": "Indirect",
-        "label": "⛅ Filtered / Indirect light (bright, but no direct rays)"
+        "label": "⛅ Filtered / Indirect light (bright, but no direct rays)",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779801791/cloud-sun-2-svgrepo-com_ncqhti.svg"
       },
       {
         "value": "Shade",
-        "label": "☁️ Partial shade / Full shade (north-facing, dark corners)"
+        "label": "☁️ Partial shade / Full shade (north-facing, dark corners)",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779801792/cloud-svgrepo-com_gj4zh7.svg"
       },
       {
         "value": "Artificial",
-        "label": "💡 Artificial lighting (almost no windows, but using grow lights)"
+        "label": "💡 Artificial lighting (almost no windows, but using grow lights)",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779801793/light-bulb-svgrepo-com_b6lbl6.svg"
       }
     ]
   },
@@ -29,15 +33,18 @@
     "options": [
       {
         "value": "Forgetful",
-        "label": "🌵 I forget everything (I'll remember once a month)"
+        "label": "🌵 I forget everything (I'll remember once a month)",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779801491/waves-thin-svgrepo-com_1_qyepda.svg"
       },
       {
         "value": "Regular",
-        "label": "💧 I water on schedule (consistently once a week)"
+        "label": "💧 I water on schedule (consistently once a week)",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779801490/waves-fill-svgrepo-com_gwnmeq.svg"
       },
       {
         "value": "Overwater",
-        "label": "🌊 I love to overwater with all my heart (plants often 'swim')"
+        "label": "🌊 I love to overwater with all my heart (plants often 'swim')",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779801489/waves-bold-svgrepo-com_doqfzr.svg"
       }
     ]
   },
@@ -45,7 +52,7 @@
     "id": "benefit_smart_care",
     "type": "interstitial",
     "title": "📱 Smart Care Reminders",
-    "image": "/plant2.png",
+    "image": "https://img.magnific.com/free-photo/bucket-with-gardening-tools_23-2148672667.jpg",
     "description": "Each Box includes a unique QR code. Scan it to add your new plants to our digital schedule and get automated watering notifications.",
     "buttonLabel": "Got it, let's move on"
   },
@@ -54,16 +61,26 @@
     "type": "multiple-choice",
     "question": "Who will be sharing the space with your new green friends?",
     "options": [
-      { "value": "Cat", "label": "🐈 Playful cat (likes to chew leaves)" },
+      {
+        "value": "Cat",
+        "label": "🐈 Playful cat (likes to chew leaves)",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779802164/cat-svgrepo-com_cpmkdm.svg"
+      },
       {
         "value": "Dog",
-        "label": "🐕 Dog (might accidentally knock over a pot)"
+        "label": "🐕 Dog (might accidentally knock over a pot)",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779802166/dog-svgrepo-com_2_mkevc9.svg"
       },
       {
         "value": "Kids",
-        "label": "👶 Toddlers / Kids (explore the world by touch and taste)"
+        "label": "👶 Toddlers / Kids (explore the world by touch and taste)",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779799359/Icon_23_dkxlx1.svg"
       },
-      { "value": "None", "label": "👤 Just me (no threats to the plants)" }
+      {
+        "value": "None",
+        "label": "👤 Just me (no threats to the plants)",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779801274/empty-set-slash-svgrepo-com_ysket9.svg"
+      }
     ]
   },
   {
@@ -71,14 +88,20 @@
     "type": "single-choice",
     "question": "What plant size is ideal for you?",
     "options": [
-      { "value": "Tiny", "label": "🌱 Tiny (for a desktop or windowsill)" },
+      {
+        "value": "Tiny",
+        "label": "🌱 Tiny (for a desktop or windowsill)",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779800882/Icon_31_ozyfvw.svg"
+      },
       {
         "value": "Midi",
-        "label": "🪴 Midi (standard pots for shelves and dressers)"
+        "label": "🪴 Midi (standard pots for shelves and dressers)",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779799350/Icon_10_hvrnc1.svg"
       },
       {
         "value": "Giant",
-        "label": "🌳 Giants (large floor plants to create a jungle)"
+        "label": "🌳 Giants (large floor plants to create a jungle)",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779799349/Icon_9_qudabf.svg"
       }
     ]
   },
@@ -86,7 +109,7 @@
     "id": "benefit_guarantee",
     "type": "interstitial",
     "title": "🌿 30-Day Plant Guarantee",
-    "image": "public/plant2.png",
+    "image": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779798802/plant1_ydjsmc.png",
     "description": "Don't worry about having a green thumb! If any plant from your box doesn't survive its first month, we will replace it absolutely free.",
     "buttonLabel": "Awesome, let's continue!"
   },
@@ -97,17 +120,24 @@
     "options": [
       {
         "value": "Dry heat",
-        "label": "🥵 In winter, heaters fry the air, making it very dry"
+        "label": "🥵 In winter, heaters fry the air, making it very dry",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779799350/Icon_11_ifthed.svg"
       },
       {
         "value": "Drafts",
-        "label": "🥶 There are strong drafts or the air conditioner runs constantly"
+        "label": "🥶 There are strong drafts or the air conditioner runs constantly",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779799351/Icon_12_kh9wz7.svg"
       },
       {
         "value": "Humid",
-        "label": "🧖 High humidity / I plan to put it in the bathroom"
+        "label": "🧖 High humidity / I plan to put it in the bathroom",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779799351/Icon_13_zxxeyl.svg"
       },
-      { "value": "Stable", "label": "👌 Comfortable, stable climate" }
+      {
+        "value": "Stable",
+        "label": "👌 Comfortable, stable climate",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779799352/Icon_14_pllrws.svg"
+      }
     ]
   },
   {
@@ -117,15 +147,18 @@
     "options": [
       {
         "value": "Beginner",
-        "label": "🥚 Absolute zero (even a plastic cactus would die under my watch)"
+        "label": "🥚 Absolute zero (even a plastic cactus would die under my watch)",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779799351/Icon_13_zxxeyl.svg"
       },
       {
         "value": "Intermediate",
-        "label": "🐣 Basic (I know what drainage and repotting are)"
+        "label": "🐣 Basic (I know what drainage and repotting are)",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779799353/Icon_15_vujoew.svg"
       },
       {
         "value": "Expert",
-        "label": "🦅 Expert (a finicky Calathea or Orchid won't scare me)"
+        "label": "🦅 Expert (a finicky Calathea or Orchid won't scare me)",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779799350/Icon_10_hvrnc1.svg"
       }
     ]
   },
@@ -136,15 +169,18 @@
     "options": [
       {
         "value": "Minimalism",
-        "label": "🌿 Green minimalism (classic solid green leaves)"
+        "label": "🌿 Green minimalism (classic solid green leaves)",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779799354/Icon_16_lhzu60.svg"
       },
       {
         "value": "Patterns",
-        "label": "🎨 Exotic patterns (variegated, with colorful veins)"
+        "label": "🎨 Exotic patterns (variegated, with colorful veins)",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779799354/Icon_17_w46atg.svg"
       },
       {
         "value": "Geometry",
-        "label": "📐 Succulent geometry (sharp shapes, fleshy leaves)"
+        "label": "📐 Succulent geometry (sharp shapes, fleshy leaves)",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779799355/Icon_18_pvbuks.svg"
       }
     ]
   },
@@ -152,7 +188,7 @@
     "id": "benefit_eco_friendly",
     "type": "interstitial",
     "title": "🌍 Sourced Sustainably",
-    "image": "/plant2.png",
+    "image": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779798835/plant2_uhtkct.png",
     "description": "All our plants come from eco-certified local nurseries, and our packaging is 100% biodegradable and plastic-free.",
     "buttonLabel": "Love that! Next question"
   },
@@ -163,15 +199,18 @@
     "options": [
       {
         "value": "Minimal",
-        "label": "⏳ Up to 5 minutes (quick water and forget)"
+        "label": "⏳ Up to 5 minutes (quick water and forget)",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779799356/Icon_19_sr00mz.svg"
       },
       {
         "value": "Moderate",
-        "label": "🧹 20-30 minutes (inspect, wipe dust from leaves, mist)"
+        "label": "🧹 20-30 minutes (inspect, wipe dust from leaves, mist)",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779799357/Icon_20_nfp0wf.svg"
       },
       {
         "value": "Enthusiast",
-        "label": "🧘 This is my meditation, ready to tinker for hours"
+        "label": "🧘 This is my meditation, ready to tinker for hours",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779799358/Icon_21_qzmrpd.svg"
       }
     ]
   },
@@ -182,14 +221,24 @@
     "options": [
       {
         "value": "Decor",
-        "label": "📸 For coziness and nice backgrounds for calls/Instagram"
+        "label": "📸 For coziness and nice backgrounds for calls/Instagram",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779799351/Icon_12_kh9wz7.svg"
       },
       {
         "value": "Air",
-        "label": "🍃 Air purification and a healthy microclimate"
+        "label": "🍃 Air purification and a healthy microclimate",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779799359/Icon_22_vd1rnj.svg"
       },
-      { "value": "Hobby", "label": "💆 Stress relief and a new hobby" },
-      { "value": "Gift", "label": "🎁 Buying the subscription as a gift" }
+      {
+        "value": "Hobby",
+        "label": "💆 Stress relief and a new hobby",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779799359/Icon_23_dkxlx1.svg"
+      },
+      {
+        "value": "Gift",
+        "label": "🎁 Buying the subscription as a gift",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779799360/Icon_24_a0zdst.svg"
+      }
     ]
   },
   {
@@ -197,10 +246,26 @@
     "type": "single-choice",
     "question": "Where exactly do you plan to place your first box?",
     "options": [
-      { "value": "Living room", "label": "🏠 Bedroom or living room" },
-      { "value": "Office", "label": "💻 Workspace / Office" },
-      { "value": "Kitchen", "label": "🍳 Kitchen" },
-      { "value": "Balcony", "label": "🌅 Enclosed balcony / Terrace" }
+      {
+        "value": "Living room",
+        "label": "🏠 Bedroom or living room",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779799361/Icon_25_jmjdy1.svg"
+      },
+      {
+        "value": "Office",
+        "label": "💻 Workspace / Office",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779799362/Icon_26_lgrlxr.svg"
+      },
+      {
+        "value": "Kitchen",
+        "label": "🍳 Kitchen",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779799363/Icon_27_aw53pq.svg"
+      },
+      {
+        "value": "Balcony",
+        "label": "🌅 Enclosed balcony / Terrace",
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779799363/Icon_28_fuwa1q.svg"
+      }
     ]
   },
   {

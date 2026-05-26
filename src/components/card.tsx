@@ -4,17 +4,24 @@ import { motion } from "framer-motion";
 
 import cn from "classnames";
 import React from "react";
+import Image from "next/image";
 
 interface Props {
   option: {
     value: string;
     label: string;
   };
+  icon: string;
   isChecked: boolean;
   onSelect: (label: string) => void;
 }
 
-export const Card: React.FC<Props> = ({ option, isChecked, onSelect }) => {
+export const Card: React.FC<Props> = ({
+  option,
+  isChecked,
+  icon,
+  onSelect,
+}) => {
   const { label, value } = option;
 
   return (
@@ -28,7 +35,9 @@ export const Card: React.FC<Props> = ({ option, isChecked, onSelect }) => {
       )}
     >
       <div className="flex justify-between items-center">
-        <h1 className="text-text text-2xl">{value}</h1>
+        <div className="bg-[#E8F3E8] size-10 rounded-xl flex justify-center items-center">
+          <Image src={icon} width={20} height={20} className="aspect-square" alt={`${value}-card-icon`} />
+        </div>
 
         <div
           className={cn(
@@ -41,6 +50,7 @@ export const Card: React.FC<Props> = ({ option, isChecked, onSelect }) => {
           )}
         </div>
       </div>
+      <h1 className="text-text text-left text-2xl">{value}</h1>
 
       <p className="text-accent text-left">{label}</p>
     </motion.button>

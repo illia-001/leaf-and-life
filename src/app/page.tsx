@@ -10,17 +10,17 @@ export default function Home() {
   return (
     <>
       <Header />
+      <div className="col-span-full flex justify-center bg-primary z-10">
+        <Image
+          width={390}
+          height={480}
+          src="https://res.cloudinary.com/dryw0xncr/image/upload/v1779798491/Intro_h1tegm.png"
+          alt="intro-image"
+          loading="eager"
+          className="md:w-120 rounded-2xl sm:rounded-full z-2"
+        />
+      </div>
       <main className="min-h-screen z-10 grid grid-cols-1 bg-primary md:gap-x-4 md:grid-cols-6  px-4 lg:px-8">
-        <div className="col-span-full flex justify-center">
-          <Image
-            width={390}
-            height={480}
-            src="/Intro.png"
-            alt="intro-image"
-            loading="eager"
-            className="lg:w-120 lg:rounded-full z-2"
-          />
-        </div>
         <section className="z-2 bg-primary flex flex-col items-center px-4 py-12 gap-4 col-span-full">
           <h1 className="text-3xl font-sans text-text text-center font-semibold">
             Curating Tranquility, One Leaf at a Time

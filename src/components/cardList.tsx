@@ -50,6 +50,7 @@ export const CardList: React.FC<Props> = ({ items, id }) => {
         <Card
           key={option.label}
           option={option}
+          icon={option.icon}
           isChecked={answers?.includes(option.value) || false}
           onSelect={handleSetAnswer}
         />

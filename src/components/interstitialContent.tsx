@@ -5,8 +5,9 @@ export const InterstitialContent = ({ item }: { item: Interstitial }) => {
   return (
     <div className="flex flex-col items-center space-y-4 gap-4">
       <Image
-        src="https://images.pexels.com/photos/14464790/pexels-photo-14464790.jpeg"
+        src={item.image}
         width={342}
+        loading="eager"
         height={342}
         alt="icon"
         className="aspect-square lg:w-110 object-cover rounded-2xl mb-10 col-span-full sm:col-span-3"
