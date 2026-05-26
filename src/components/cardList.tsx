@@ -1,17 +1,10 @@
 import React from "react";
 import Card from "./card";
 import { useAnswers } from "@/hooks/useAnswers";
+import { Question } from "@/types/Question";
 
 interface Props {
-  items: {
-    id: string;
-    type: string;
-    question: string;
-    options: {
-      value: string;
-      label: string;
-    }[];
-  };
+  items: Question;
   id: string;
 }
 

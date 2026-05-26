@@ -4,6 +4,7 @@ export interface Question {
   question: string,
   options: {
     value: string,
-    label: string
+    label: string,
+    icon: string,
   }[],
 }
