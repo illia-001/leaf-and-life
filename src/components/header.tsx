@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="flex col-span-full justify-between items-center h-17 gap-4 w-full px-4 bg-[#FCF9F2CC]">
+    <header className="flex z-1 col-span-full justify-between items-center h-17 gap-4 w-full px-4 bg-[#FCF9F2CC]">
       <Link href="/" className="font-semibold text-text text-2xl">
         Leaf & Life
       </Link>

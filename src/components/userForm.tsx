@@ -21,7 +21,7 @@ export default function UserForm() {
     setUserInfo((prev) => ({ ...prev, [id]: value }));
   };
 
-  const handleSumbit = (event: React.SubmitEvent) => {
+  const handleSumbit = (event: React.FormEvent) => {
     event.preventDefault();
     if (!plan) {
       setError("Please choose plan!");
@@ -36,42 +36,45 @@ export default function UserForm() {
     <>
       <form
         id="form"
-        className="grid grid-cols-1 md:grid-cols-6 gap-4 p-4 col-span-full bg-primary"
+        className="grid grid-cols-1 md:grid-cols-6 gap-8 p-4 col-span-full bg-primary items-start"
         onSubmit={handleSumbit}
       >
-        <div className="flex flex-col md:items-center gap-4 md:col-span-3">
-          <h1 className="text-text font-sans text-2xl text-center font-semibold">
+        <section className="grid grid-cols-1 grid-rows-[auto_1fr] gap-4 md:col-span-3 w-full max-w-xl justify-self-center md:justify-self-start">
+          <h1 className="text-text font-sans text-2xl text-left font-semibold min-h-16 flex items-center">
             {formData?.question}
           </h1>
-          {fields?.map((item) => (
-            <label
-              key={item.id}
-              className="flex flex-col gap-2 text-accent font-mono font-semibold"
-            >
-              {item.label}
-              <div className="flex gap-2 items-center border border-gray-400 px-2 rounded-xl has-[input:user-valid]:border-accent has-[input:user-invalid]:border-error-border">
-                <IMaskInput
-                  type={item.type}
-                  className="h-13 w-full md:w-100 order-2 outline-none text-text peer"
-                  placeholder={item.placeholder}
-                  minLength={item.validation.minLength}
-                  mask={item.validation.mask}
-                  pattern={item.validation.pattern}
-                  required={item.required}
-                  onChange={(event) =>
-                    handleChangeData(event.target.value, item.id)
-                  }
-                  value={userInfo[item.id as keyof UserData]}
-                />
-                <Icon iconUrl={item.icon} classNames="bg-accent peer-user-invalid:bg-error-text" />
-              </div>
-            </label>
-          ))}
-        </div>
-        <div className="flex flex-col md:items-end gap-8 mt-10 md:mt-0 md:col-span-3">
-          <PaymentForm onChange={handleChangeData} />
+          
+          <div className="flex flex-col gap-4 w-full">
+            {fields?.map((item) => (
+              <label
+                key={item.id}
+                className="flex flex-col w-full gap-2 text-accent font-mono font-semibold"
+              >
+                {item.label}
+                <div className="flex gap-2 items-center border border-gray-400 px-2 rounded-xl focus-within:border-accent has-[input:user-invalid]:border-error-border">
+                  <IMaskInput
+                    type={item.type}
+                    className="h-13 w-full order-2 outline-none text-text peer bg-transparent"
+                    placeholder={item.placeholder}
+                    minLength={item.validation.minLength}
+                    mask={item.validation.mask}
+                    pattern={item.validation.pattern}
+                    required={item.required}
+                    onChange={(event) =>
+                      handleChangeData(event.target.value, item.id)
+                    }
+                    value={(userInfo[item.id as keyof UserData] as string) || ""}
+                  />
+                  <Icon iconUrl={item.icon} classNames="bg-accent peer-user-invalid:bg-error-text" />
+                </div>
+              </label>
+            ))}
+          </div>
+        </section>
 
-          <Button classname="md:w-75">Submit</Button>
+        <div className="md:col-span-3 w-full max-w-xl justify-self-center md:justify-self-end flex flex-col gap-6">
+          <PaymentForm onChange={handleChangeData} />
+          <Button classname="w-full md:w-75 self-end">Submit</Button>
         </div>
       </form>
       {isModalVisible && <CheckoutModal isVisible={setIsModalVisible} />}

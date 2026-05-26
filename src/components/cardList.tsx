@@ -3,6 +3,10 @@ import Card from "./card";
 import { useAnswers, useQuiz } from "@/hooks/useQuiz";
 import { Question } from "@/types/Question";
 
+import { motion } from "framer-motion";
+import { ItemType } from "@/types/itemType";
+import { listVariants } from "@/styles/animations/listVariants";
+
 interface Props {
   items: Question;
   id: string;
@@ -16,7 +20,7 @@ export const CardList: React.FC<Props> = ({ items, id }) => {
   const handleSetAnswer = (value: string) => {
     setError(null);
 
-    if (items.type === "single-choice") {
+    if (items.type === ItemType.SINGLE) {
       if (answers.includes(value)) {
         setAnswer(id, []);
       } else {
@@ -24,8 +28,7 @@ export const CardList: React.FC<Props> = ({ items, id }) => {
       }
     }
 
-    if (items.type === "multiple-choice") {
-
+    if (items.type === ItemType.MULTIPLE) {
       if (answers.includes(value)) {
         const actualAnswers = answers.filter((answer) => answer !== value);
         setAnswer(id, [...actualAnswers]);
@@ -36,7 +39,13 @@ export const CardList: React.FC<Props> = ({ items, id }) => {
   };
 
   return (
-    <div className="flex flex-col items-center gap-4">
+    <motion.div
+      variants={listVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      className="flex flex-col items-center gap-4"
+    >
       {options.map((option) => (
         <Card
           key={option.label}
@@ -46,6 +55,6 @@ export const CardList: React.FC<Props> = ({ items, id }) => {
           onSelect={handleSetAnswer}
         />
       ))}
-    </div>
+    </motion.div>
   );
 };

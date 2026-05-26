@@ -1,8 +1,7 @@
 "use client";
-import plans from "@/data/plans.json";
-import PlanCard from "@/components/planCard";
-import AnimateItems from "@/components/animateItems";
 
+import AnimateItems from "@/components/animateItems";
+import PlanList from "@/components/planList";
 import UserForm from "@/components/userForm";
 
 export default function Checkout() {
@@ -16,13 +15,8 @@ export default function Checkout() {
           Bring the tranquility of nature into your home with our curated
           subscription boxes.
         </p>
-
         <AnimateItems>
-          <div className="grid grid-cols-1 sm:grid-cols-6 gap-4">
-            {plans.map((plan) => (
-              <PlanCard key={plan.name} selectedPlan={plan} />
-            ))}
-          </div>
+          <PlanList />
         </AnimateItems>
       </div>
       <UserForm />
