@@ -279,7 +279,8 @@
         "label": "Full Name",
         "placeholder": "John Doe",
         "required": true,
-        "validation": { "minLength": 2 }
+        "validation": { "minLength": 2 },
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779803555/user-svgrepo-com_lirc9z.svg"
       },
       {
         "id": "email",
@@ -289,7 +290,8 @@
         "required": true,
         "validation": {
           "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
-        }
+        },
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779803552/email-1-svgrepo-com_ibgqjf.svg"
       },
       {
         "id": "phone",
@@ -297,7 +299,8 @@
         "label": "Phone Number",
         "placeholder": "+380 (XX) XXX-XX-XX",
         "required": true,
-        "validation": { "mask": "+380 (00) 000-00-00" }
+        "validation": { "mask": "+380 (00) 000-00-00" },
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779803553/phone-svgrepo-com_f3kqho.svg"
       },
       {
         "id": "address",
@@ -305,7 +308,8 @@
         "label": "Delivery Address",
         "placeholder": "City, Street, Building / Shipping branch",
         "required": true,
-        "validation": { "minLength": 5 }
+        "validation": { "minLength": 5 },
+        "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779803550/city-town-residents-svgrepo-com_yt9h4i.svg"
       }
     ],
     "paymentFields": {

@@ -7,6 +7,7 @@ import PaymentForm from "./paymentForm";
 import React, { useState } from "react";
 import CheckoutModal from "./checkoutModal";
 import { UserData } from "@/types/userData";
+import Image from "next/image";
 
 export default function UserForm() {
   const { currentPlan, setError, userData, setUserData } = useAnswers();
@@ -48,25 +49,35 @@ export default function UserForm() {
               className="flex flex-col gap-2 text-accent font-mono font-semibold"
             >
               {item.label}
-              <IMaskInput
-                type={item.type}
-                className="h-13 w-full md:w-100 outline-none text-text border border-gray-400 p-2 rounded-xl user-invalid:border-red-400 user-valid:border-accent"
-                placeholder={item.placeholder}
-                minLength={item.validation.minLength}
-                mask={item.validation.mask}
-                pattern={item.validation.pattern}
-                required={item.required}
-                onChange={(event) =>
-                  handleChangeData(event.target.value, item.id)
-                }
-                value={userInfo[item.id as keyof UserData]}
-              />
+              <div className="flex gap-4 items-center border border-gray-400 px-2 rounded-xl">
+                  <Image
+                    src={item.icon}
+                    width={20}
+                    height={20}
+                    alt="icon"
+                    className="aspect-square"
+                  />
+
+                <IMaskInput
+                  type={item.type}
+                  className="h-13 w-full md:w-100 outline-none text-text user-invalid:border-red-400 user-valid:border-accent"
+                  placeholder={item.placeholder}
+                  minLength={item.validation.minLength}
+                  mask={item.validation.mask}
+                  pattern={item.validation.pattern}
+                  required={item.required}
+                  onChange={(event) =>
+                    handleChangeData(event.target.value, item.id)
+                  }
+                  value={userInfo[item.id as keyof UserData]}
+                />
+              </div>
             </label>
           ))}
         </div>
         <div className="flex flex-col md:items-end gap-8 mt-4 md:mt-0 md:col-span-3">
           <PaymentForm onChange={handleChangeData} />
-          
+
           <Button classname="md:w-75">Submit</Button>
         </div>
       </form>
