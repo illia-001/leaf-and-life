@@ -1,0 +1,17 @@
+[
+  {
+    "title": "30-Day Guarantee",
+    "descritption": "If your plant doesn't thrive in the first month, we'll replace it for free, no questions asked.",
+    "icon": "/icons/guarantee.svg"
+  },
+  {
+    "title": "Expert Guidance",
+    "descritption": "Unlimited access to our botanical experts for care tips and troubleshooting advice.",
+    "icon": "/icons/guidance.svg"
+  },
+  {
+    "title": "Sustainable Growth",
+    "descritption": "Locally sourced plants and biodegradable pots designed for minimal environmental impact.",
+    "icon": "/icons/growth.svg"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "name": "The Sprout",
+    "price": "$29",
+    "period": "/months",
+    "condition": "1 plant/month, hand-picked"
+  },
+  {
+    "name": "The Grove",
+    "price": "$69",
+    "period": "/months",
+    "condition": "3 plants/month, hand-picked"
+  },
+  {
+    "name": "The Jungle",
+    "price": "$109",
+    "period": "/months",
+    "condition": "5 plants/month, premium pots included"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "title": "The Quiz",
+    "descritption": "Tell us about your space, light, and schedule in a 2-minute assessment.",
+    "icon": "/icons/quiz.svg"
+  },
+  {
+    "title": "The Curation",
+    "descritption": "Our experts select species that will thrive in your specific conditions.",
+    "icon": "/icons/curation.svg"
+  },
+  {
+    "title": "The Delivery",
+    "descritption": "Beautiful plants arrive at your doorstep in eco-friendly packaging.",
+    "icon": "/icons/delivery.svg"
+  }
+]

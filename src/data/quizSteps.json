@@ -1,0 +1,278 @@
+[
+  {
+    "id": "lighting",
+    "type": "single-choice",
+    "question": "How much natural sunlight does the room get where the plants will be placed?",
+    "options": [
+      {
+        "value": "Direct",
+        "label": "🌞 Direct sunlight (south-facing windows, lots of light all day)"
+      },
+      {
+        "value": "Indirect",
+        "label": "⛅ Filtered / Indirect light (bright, but no direct rays)"
+      },
+      {
+        "value": "Shade",
+        "label": "☁️ Partial shade / Full shade (north-facing, dark corners)"
+      },
+      {
+        "value": "Artificial",
+        "label": "💡 Artificial lighting (almost no windows, but using grow lights)"
+      }
+    ]
+  },
+  {
+    "id": "watering",
+    "type": "single-choice",
+    "question": "How is your watering memory?",
+    "options": [
+      {
+        "value": "Forgetful",
+        "label": "🌵 I forget everything (I'll remember once a month)"
+      },
+      {
+        "value": "Regular",
+        "label": "💧 I water on schedule (consistently once a week)"
+      },
+      {
+        "value": "Overwater",
+        "label": "🌊 I love to overwater with all my heart (plants often 'swim')"
+      }
+    ]
+  },
+  {
+    "id": "benefit_smart_care",
+    "type": "interstitial",
+    "title": "📱 Smart Care Reminders",
+    "image": "/plant2.png",
+    "description": "Each Box includes a unique QR code. Scan it to add your new plants to our digital schedule and get automated watering notifications.",
+    "buttonLabel": "Got it, let's move on"
+  },
+  {
+    "id": "pets_safety",
+    "type": "multiple-choice",
+    "question": "Who will be sharing the space with your new green friends?",
+    "options": [
+      { "value": "Cat", "label": "🐈 Playful cat (likes to chew leaves)" },
+      {
+        "value": "Dog",
+        "label": "🐕 Dog (might accidentally knock over a pot)"
+      },
+      {
+        "value": "Kids",
+        "label": "👶 Toddlers / Kids (explore the world by touch and taste)"
+      },
+      { "value": "None", "label": "👤 Just me (no threats to the plants)" }
+    ]
+  },
+  {
+    "id": "size",
+    "type": "single-choice",
+    "question": "What plant size is ideal for you?",
+    "options": [
+      { "value": "Tiny", "label": "🌱 Tiny (for a desktop or windowsill)" },
+      {
+        "value": "Midi",
+        "label": "🪴 Midi (standard pots for shelves and dressers)"
+      },
+      {
+        "value": "Giant",
+        "label": "🌳 Giants (large floor plants to create a jungle)"
+      }
+    ]
+  },
+  {
+    "id": "benefit_guarantee",
+    "type": "interstitial",
+    "title": "🌿 30-Day Plant Guarantee",
+    "image": "public/plant2.png",
+    "description": "Don't worry about having a green thumb! If any plant from your box doesn't survive its first month, we will replace it absolutely free.",
+    "buttonLabel": "Awesome, let's continue!"
+  },
+  {
+    "id": "climate",
+    "type": "multiple-choice",
+    "question": "What are the microclimate features of your space?",
+    "options": [
+      {
+        "value": "Dry heat",
+        "label": "🥵 In winter, heaters fry the air, making it very dry"
+      },
+      {
+        "value": "Drafts",
+        "label": "🥶 There are strong drafts or the air conditioner runs constantly"
+      },
+      {
+        "value": "Humid",
+        "label": "🧖 High humidity / I plan to put it in the bathroom"
+      },
+      { "value": "Stable", "label": "👌 Comfortable, stable climate" }
+    ]
+  },
+  {
+    "id": "experience",
+    "type": "single-choice",
+    "question": "What is your plant care background?",
+    "options": [
+      {
+        "value": "Beginner",
+        "label": "🥚 Absolute zero (even a plastic cactus would die under my watch)"
+      },
+      {
+        "value": "Intermediate",
+        "label": "🐣 Basic (I know what drainage and repotting are)"
+      },
+      {
+        "value": "Expert",
+        "label": "🦅 Expert (a finicky Calathea or Orchid won't scare me)"
+      }
+    ]
+  },
+  {
+    "id": "aesthetics",
+    "type": "single-choice",
+    "question": "What visual style of plants appeals to you more?",
+    "options": [
+      {
+        "value": "Minimalism",
+        "label": "🌿 Green minimalism (classic solid green leaves)"
+      },
+      {
+        "value": "Patterns",
+        "label": "🎨 Exotic patterns (variegated, with colorful veins)"
+      },
+      {
+        "value": "Geometry",
+        "label": "📐 Succulent geometry (sharp shapes, fleshy leaves)"
+      }
+    ]
+  },
+  {
+    "id": "benefit_eco_friendly",
+    "type": "interstitial",
+    "title": "🌍 Sourced Sustainably",
+    "image": "/plant2.png",
+    "description": "All our plants come from eco-certified local nurseries, and our packaging is 100% biodegradable and plastic-free.",
+    "buttonLabel": "Love that! Next question"
+  },
+  {
+    "id": "time",
+    "type": "single-choice",
+    "question": "How much time per week are you willing to spend on your green zone?",
+    "options": [
+      {
+        "value": "Minimal",
+        "label": "⏳ Up to 5 minutes (quick water and forget)"
+      },
+      {
+        "value": "Moderate",
+        "label": "🧹 20-30 minutes (inspect, wipe dust from leaves, mist)"
+      },
+      {
+        "value": "Enthusiast",
+        "label": "🧘 This is my meditation, ready to tinker for hours"
+      }
+    ]
+  },
+  {
+    "id": "goal",
+    "type": "multiple-choice",
+    "question": "Why are you subscribing to a plant service?",
+    "options": [
+      {
+        "value": "Decor",
+        "label": "📸 For coziness and nice backgrounds for calls/Instagram"
+      },
+      {
+        "value": "Air",
+        "label": "🍃 Air purification and a healthy microclimate"
+      },
+      { "value": "Hobby", "label": "💆 Stress relief and a new hobby" },
+      { "value": "Gift", "label": "🎁 Buying the subscription as a gift" }
+    ]
+  },
+  {
+    "id": "location",
+    "type": "single-choice",
+    "question": "Where exactly do you plan to place your first box?",
+    "options": [
+      { "value": "Living room", "label": "🏠 Bedroom or living room" },
+      { "value": "Office", "label": "💻 Workspace / Office" },
+      { "value": "Kitchen", "label": "🍳 Kitchen" },
+      { "value": "Balcony", "label": "🌅 Enclosed balcony / Terrace" }
+    ]
+  },
+  {
+    "id": "user_info_form",
+    "type": "user-form",
+    "question": "Where should we send your personalized PlantBox?",
+    "fields": [
+      {
+        "id": "fullName",
+        "type": "text",
+        "label": "Full Name",
+        "placeholder": "John Doe",
+        "required": true,
+        "validation": { "minLength": 2 }
+      },
+      {
+        "id": "email",
+        "type": "email",
+        "label": "Email Address",
+        "placeholder": "example@mail.com",
+        "required": true,
+        "validation": {
+          "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+        }
+      },
+      {
+        "id": "phone",
+        "type": "tel",
+        "label": "Phone Number",
+        "placeholder": "+380 (XX) XXX-XX-XX",
+        "required": true,
+        "validation": { "mask": "+380 (00) 000-00-00" }
+      },
+      {
+        "id": "address",
+        "type": "text",
+        "label": "Delivery Address",
+        "placeholder": "City, Street, Building / Shipping branch",
+        "required": true,
+        "validation": { "minLength": 5 }
+      }
+    ],
+    "paymentFields": {
+      "id": "user_payment_form",
+      "type": "payment-form",
+      "question": "Checkout",
+      "fields": [
+        {
+          "id": "cardNumber",
+          "type": "text",
+          "label": "Visa/Mastercard",
+          "placeholder": "____-____-____-____",
+          "required": true,
+          "validation": { "mask": "0000-0000-0000-0000", "minLength": 16 }
+        },
+        {
+          "id": "cardDate",
+          "type": "text",
+          "label": "Date",
+          "placeholder": "MM/YY",
+          "required": true,
+          "validation": { "mask": "00/00", "minLength": 4 }
+        },
+        {
+          "id": "cardCvv",
+          "type": "text",
+          "label": "CVV",
+          "placeholder": "***",
+          "required": true,
+          "validation": { "minLength": 3, "mask": "000" }
+        }
+      ]
+    }
+  }
+]
