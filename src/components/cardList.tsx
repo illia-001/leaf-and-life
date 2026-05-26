@@ -17,17 +17,24 @@ interface Props {
 
 export const CardList: React.FC<Props> = ({ items, id }) => {
   const options = items.options;
-  const {setAnswer, setError} = useAnswers();
+  const { setAnswer, setError } = useAnswers();
   const answers = useAnswers((state) => state.getAnswer(id)) || [];
+  const i = useAnswers((state) => state.items);
 
   const handleSetAnswer = (value: string) => {
     setError(null);
 
     if (items.type === "single-choice") {
-      setAnswer(id, [value]);
+      if (answers.includes(value)) {
+        setAnswer(id, []);
+      } else {
+        setAnswer(id, [value]);
+      }
     }
 
     if (items.type === "multiple-choice") {
+      console.log(i);
+
       if (answers.includes(value)) {
         const actualAnswers = answers.filter((answer) => answer !== value);
         setAnswer(id, [...actualAnswers]);

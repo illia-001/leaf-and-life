@@ -252,7 +252,7 @@
           "id": "cardNumber",
           "type": "text",
           "label": "Visa/Mastercard",
-          "placeholder": "____-____-____-____",
+          "placeholder": "Card number",
           "required": true,
           "validation": { "mask": "0000-0000-0000-0000", "minLength": 16 }
         },
@@ -260,15 +260,15 @@
           "id": "cardDate",
           "type": "text",
           "label": "Date",
-          "placeholder": "MM/YY",
+          "placeholder": "MM / YY",
           "required": true,
           "validation": { "mask": "00/00", "minLength": 4 }
         },
         {
-          "id": "cardCvv",
+          "id": "cardCvc",
           "type": "text",
-          "label": "CVV",
-          "placeholder": "***",
+          "label": "CVC",
+          "placeholder": "CVC",
           "required": true,
           "validation": { "minLength": 3, "mask": "000" }
         }

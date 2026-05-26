@@ -64,10 +64,10 @@ export default function UserForm() {
             </label>
           ))}
         </div>
-        <div className="flex flex-col  md:items-center gap-8 mt-4 md:mt-0 md:col-span-3">
+        <div className="flex flex-col md:items-end gap-8 mt-4 md:mt-0 md:col-span-3">
           <PaymentForm onChange={handleChangeData} />
           
-          <Button classname="md:w-100">Submit</Button>
+          <Button classname="md:w-75">Submit</Button>
         </div>
       </form>
       {isModalVisible && <CheckoutModal isVisible={setIsModalVisible} />}

@@ -18,10 +18,10 @@ export default function Home() {
             src="/Intro.png"
             alt="intro-image"
             loading="eager"
-            className="lg:w-120 lg:rounded-full"
+            className="lg:w-120 lg:rounded-full z-2"
           />
         </div>
-        <section className=" flex flex-col items-center px-4 py-12 gap-4 col-span-full">
+        <section className="z-2 bg-primary flex flex-col items-center px-4 py-12 gap-4 col-span-full">
           <h1 className="text-3xl font-sans text-text text-center font-semibold">
             Curating Tranquility, One Leaf at a Time
           </h1>
@@ -34,7 +34,7 @@ export default function Home() {
           </Link>
         </section>
 
-        <section className=" rounded-2xl flex flex-col col-span-3 w-full items-center px-4 py-12 gap-12 bg-secondary mb-20">
+        <section className="z-2 rounded-2xl flex flex-col col-span-3 w-full items-center px-4 py-12 gap-12 bg-secondary mb-20">
           <h1 className="text-3xl text-text text-center font-sans font-semibold">
             How it Works
           </h1>
@@ -56,7 +56,7 @@ export default function Home() {
           ))}
         </section>
 
-        <section className=" rounded-2xl flex flex-col col-span-3 items-center not-first:gap-8 mb-20 px-4 py-12 bg-secondary">
+        <section className="sticky md:static bottom-0 z-1 rounded-2xl flex flex-col md:col-span-3 items-center not-first:gap-8 mb-20 px-4 py-12 bg-secondary">
           <h1 className="text-text font-semibold text-3xl font-sans">
             Why Leaf & Life
           </h1>
@@ -74,7 +74,7 @@ export default function Home() {
             </article>
           ))}
         </section>
-        <section className=" rounded-2xl bg-text flex col-span-full flex-col items-center px-4 py-24 gap-6 w-full">
+        <section className="sticky md:static bottom-0 z-0 rounded-2xl bg-text flex col-span-full flex-col items-center px-4 py-24 gap-6 w-full">
           <h1 className="text-3xl font-sans text-center w-63">
             Ready to find your match?
           </h1>

@@ -33,7 +33,7 @@ export default function NavigationBar({
   };
 
   const handleSubmit = () => {
-    if (type !== ItemType.INTER && !answers) {
+    if (type !== ItemType.INTER && !answers?.length) {
       setError("Choose the answer!");
       return;
     }

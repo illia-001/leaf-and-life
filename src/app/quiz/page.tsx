@@ -16,6 +16,7 @@ export default function Quiz() {
 
   const id = quizSteps[currentStep].id;
   const item = quizSteps.find((item) => item.id === id);
+  const totalSteps = quizSteps.length - 1;
 
   return (
     <>
@@ -24,20 +25,22 @@ export default function Quiz() {
           {item?.type === ItemType.INTER && (
             <InterstitialContent item={item as Interstitial} />
           )}{" "}
-          {(item?.type === ItemType.SINGLE || item?.type === ItemType.MULTIPLE) && (
+          {(item?.type === ItemType.SINGLE ||
+            item?.type === ItemType.MULTIPLE) && (
             <QuestionContent item={item as Question} />
           )}
-          {currentStep === quizSteps.length - 1 && <Preloader />}
+          {currentStep === totalSteps && <Preloader />}
         </AnimateItems>
       </div>
 
+      {currentStep < totalSteps && (
         <NavigationBar
-          totalSteps={quizSteps.length - 1}
+          totalSteps={totalSteps}
           buttonLabel={item?.buttonLabel}
           id={id}
           type={item?.type}
         />
-        
+      )}
     </>
   );
 }

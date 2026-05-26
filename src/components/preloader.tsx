@@ -8,7 +8,7 @@ export const Preloader = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      router.push('quiz/checkout')
+      router.push("quiz/checkout");
     }, 3000);
 
     return () => clearTimeout(timer);

@@ -6,6 +6,7 @@ interface Props {
   color?: "active" | "accent";
   classname?: string;
   children?: React.ReactNode;
+  disabled?: boolean;
 }
 
 export const Button: React.FC<Props> = ({
@@ -13,6 +14,7 @@ export const Button: React.FC<Props> = ({
   color = "accent",
   classname,
   children = "Next Step",
+  disabled = false,
 }) => {
   const getStyles = () => {
     switch (color) {
@@ -33,6 +35,7 @@ export const Button: React.FC<Props> = ({
         classname,
       )}
       onClick={onSubmit}
+      disabled={disabled}
     >
       {children}
     </button>
