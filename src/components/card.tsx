@@ -36,7 +36,7 @@ export const Card: React.FC<Props> = ({
       )}
     >
       <div className="flex justify-between items-center">
-        <div className="bg-[#E8F3E8] size-10 rounded-xl flex justify-center items-center">
+        <div className="bg-bg-icon size-10 rounded-xl flex justify-center items-center">
           <Icon iconUrl={icon} classNames="bg-accent" />          
         </div>
 

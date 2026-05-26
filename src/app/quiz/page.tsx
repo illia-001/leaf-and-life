@@ -20,11 +20,11 @@ export default function Quiz() {
 
   return (
     <>
-      <div className="z-1 flex grow text-error overflow-hidden px-4 py-10 relative bg-primary">
+      <div className="min-h-screen z-1 flex grow text-error overflow-hidden px-4 py-10 relative bg-primary">
         <AnimateItems>
           {item?.type === ItemType.INTER && (
             <InterstitialContent item={item as Interstitial} />
-          )}{" "}
+          )}
           {(item?.type === ItemType.SINGLE ||
             item?.type === ItemType.MULTIPLE) && (
             <QuestionContent item={item as Question} />

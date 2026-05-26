@@ -52,7 +52,14 @@
     "id": "benefit_smart_care",
     "type": "interstitial",
     "title": "📱 Smart Care Reminders",
-    "image": "https://img.magnific.com/free-photo/bucket-with-gardening-tools_23-2148672667.jpg",
+    "image": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779798835/plant2_uhtkct.png",
+    "icons": [
+      {
+        "url": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779820915/qr-code-02-svgrepo-com_qx4t4v.svg",
+        "label": "QR Code Scan"
+      },
+      { "url": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779820914/bell-svgrepo-com_eompjh.svg", "label": "Automated Notifications" }
+    ],
     "description": "Each Box includes a unique QR code. Scan it to add your new plants to our digital schedule and get automated watering notifications.",
     "buttonLabel": "Got it, let's move on"
   },
@@ -110,6 +117,13 @@
     "type": "interstitial",
     "title": "🌿 30-Day Plant Guarantee",
     "image": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779798802/plant1_ydjsmc.png",
+    "icons": [
+      {
+        "url": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779798862/delivery_lgjtxm.svg",
+        "label": "Free Replacement"
+      },
+      { "url": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779798864/guidance_yrnamb.svg", "label": "Expert Guidance" }
+    ],
     "description": "Don't worry about having a green thumb! If any plant from your box doesn't survive its first month, we will replace it absolutely free.",
     "buttonLabel": "Awesome, let's continue!"
   },
@@ -188,7 +202,14 @@
     "id": "benefit_eco_friendly",
     "type": "interstitial",
     "title": "🌍 Sourced Sustainably",
-    "image": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779798835/plant2_uhtkct.png",
+    "image": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779821201/Untitled_design_2025_04_03_T105236_132_ceb026d595_ngsyiy.png",
+    "icons": [
+      {
+        "url": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779798862/growth_e3ebl1.svg",
+        "label": "Eco-Certified"
+      },
+      { "url": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779819597/Icon_32_kcpq1a.svg", "label": "Plastic-Free" }
+    ],
     "description": "All our plants come from eco-certified local nurseries, and our packaging is 100% biodegradable and plastic-free.",
     "buttonLabel": "Love that! Next question"
   },
