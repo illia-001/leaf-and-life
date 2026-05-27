@@ -9,18 +9,18 @@ import Error from "../shared/error";
 import { useQuiz } from "@/hooks/useQuiz";
 
 export default function TopBar() {
-  const { step, setStep, setStepDirection } = useQuiz();
+  const { step, setStep, setAnimationDirection } = useQuiz();
   const router = useRouter();
   const totalSteps = quizSteps.length;
 
   const handleCloseQuiz = () => {
     router.push("/");
-    setStepDirection(1);
+    setAnimationDirection(1);
   };
 
   const handleBack = () => {
     router.push("/quiz");
-    setStepDirection(-1);
+    setAnimationDirection(-1);
     setStep(step - 1);
   };
 

@@ -8,12 +8,12 @@ export default function AnimateItems({
 }: {
   children: React.ReactNode;
 }) {
-  const { direction, step } = useQuiz();
+  const { animationDirection, step } = useQuiz();
 
   return (
-    <AnimatePresence mode="wait" custom={direction}>
+    <AnimatePresence mode="wait" custom={animationDirection}>
       <motion.div
-        custom={direction}
+        custom={animationDirection}
         key={step}
         variants={quizVariants as Variants}
         initial="initial"

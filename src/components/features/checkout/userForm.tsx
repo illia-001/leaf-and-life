@@ -13,7 +13,7 @@ import amplitude from "@/amplitude/amplitude";
 
 export default function UserForm() {
   const { setError } = useQuiz();
-  const { userData, plan, setUserData } = useCheckout();
+  const { userData, subscriptionPlan, setUserData } = useCheckout();
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [userInfo, setUserInfo] = useState<IUserData>(userData);
 
@@ -26,7 +26,7 @@ export default function UserForm() {
 
   const handleSumbit = (event: React.FormEvent) => {
     event.preventDefault();
-    if (!plan) {
+    if (!subscriptionPlan) {
       setError("Please choose plan!");
       return;
     }

@@ -1,7 +1,7 @@
 import { useQuiz } from "@/hooks/useQuiz";
 import { Button } from "../../ui/button";
 import { ISubscriptionPlan } from "@/types/ISubscriptionPlan";
-import { motion, scale } from "framer-motion";
+import { motion } from "framer-motion";
 import { cardVariants } from "@/styles/animations/cardVariants";
 import { useCheckout } from "@/hooks/useChackout";
 
@@ -9,23 +9,18 @@ interface Props {
   selectedPlan: ISubscriptionPlan;
 }
 
-export default function PlanCard({ selectedPlan }: Props) {
+export default function SubscriptionPlanCard({ selectedPlan }: Props) {
   const { name, price, period, condition } = selectedPlan;
-  const { direction } = useQuiz();
-  const { plan, setPlan } = useCheckout();
+  const { animationDirection } = useQuiz();
+  const { subscriptionPlan, setSubscriptionPlan } = useCheckout();
 
   const handleSelectPlan = (
-    plan: {
-      name: string;
-      price: string;
-      period: string;
-      condition: string;
-    } | null,
+    plan: ISubscriptionPlan | null,
   ) => {
     if (plan?.name === name) {
-      setPlan(null);
+      setSubscriptionPlan(null);
     } else {
-      setPlan(selectedPlan);
+      setSubscriptionPlan(selectedPlan);
     }
   };
 
@@ -33,12 +28,12 @@ export default function PlanCard({ selectedPlan }: Props) {
     <motion.div
       key={name}
       variants={cardVariants}
-      custom={direction}
+      custom={animationDirection}
       className="flex justify-center col-span-full md:col-span-3 lg:col-span-2"
     >
       <motion.div
         whileHover={{ scale: 1.01, y: -2 }}
-        onClick={() => handleSelectPlan(plan)}
+        onClick={() => handleSelectPlan(subscriptionPlan)}
         className="flex w-full flex-col justify-between shadow-[0_16px_32px_-12px_#0D21191A] p-8 rounded-2xl border-2"
       >
         <article>
@@ -53,8 +48,8 @@ export default function PlanCard({ selectedPlan }: Props) {
             <span className="text-accent">{period}</span>
           </div>
         </article>
-        <Button color={plan?.name === name ? "active" : "accent"}>
-          {plan?.name === name ? "Selected" : "Select Plan"}
+        <Button color={subscriptionPlan?.name === name ? "active" : "accent"}>
+          {subscriptionPlan?.name === name ? "Selected" : "Select Plan"}
         </Button>
       </motion.div>
     </motion.div>

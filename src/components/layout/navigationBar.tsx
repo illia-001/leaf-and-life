@@ -18,7 +18,7 @@ export default function NavigationBar({
   buttonLabel,
   totalSteps,
 }: Props) {
-  const { step, setError, setStepDirection, setStep } = useQuiz();
+  const { step, setError, setAnimationDirection, setStep } = useQuiz();
   const answers = useAnswers(id);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export default function NavigationBar({
   const handleBack = () => {
     setError(null);
     if (step > 0) {
-      setStepDirection(-1);
+      setAnimationDirection(-1);
       setStep(step - 1);
     }
   };
@@ -45,7 +45,7 @@ export default function NavigationBar({
     });
 
     if (step < totalSteps) {
-      setStepDirection(1);
+      setAnimationDirection(1);
       setStep(step + 1);
     }
 

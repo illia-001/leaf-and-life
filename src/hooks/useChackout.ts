@@ -4,13 +4,13 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 interface State {
-  plan: ISubscriptionPlan | null;
+  subscriptionPlan: ISubscriptionPlan | null;
   userData: IUserData;
 }
 
 interface Checkout extends State {
   setUserData: (userData: IUserData) => void;
-  setPlan: (plan: ISubscriptionPlan | null) => void;
+  setSubscriptionPlan: (plan: ISubscriptionPlan | null) => void;
   resetCheckoutState: () => void;
 }
 
@@ -21,7 +21,7 @@ const initialState: State = {
     email: "",
     address: "",
   },
-  plan: null,
+  subscriptionPlan: null,
 };
 
 export const useCheckout = create<Checkout>()(
@@ -31,8 +31,8 @@ export const useCheckout = create<Checkout>()(
       setUserData: (userData) => {
         set({ userData });
       },
-      setPlan: (plan) => {
-        set({ plan });
+      setSubscriptionPlan: (plan) => {
+        set({ subscriptionPlan: plan });
       },
       resetCheckoutState: () => {
         set((state) => ({ ...initialState, userData: state.userData }));
@@ -42,7 +42,7 @@ export const useCheckout = create<Checkout>()(
       name: "user-data",
       partialize: (state) => ({
         userData: state.userData,
-        plan: state.plan,
+        subscriptionPlan: state.subscriptionPlan,
       }),
     },
   ),

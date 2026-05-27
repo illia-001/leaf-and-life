@@ -25,13 +25,13 @@ export const Card: React.FC<Props> = ({
   onSelect,
 }) => {
   const { label, value } = option;
-  const { direction } = useQuiz();
+  const { animationDirection } = useQuiz();
 
   return (
     <motion.div
       key={icon}
       variants={cardVariants}
-      custom={direction}
+      custom={animationDirection}
       className="flex w-full justify-center"
     >
       <motion.button

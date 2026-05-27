@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
 import { listVariants } from "@/styles/animations/listVariants";
-import PlanCard from "./planCard";
 import plans from "@/data/plans.json";
+import SubscriptionPlanCard from "./SubscriptionPlanCard";
 
-export default function PlanList() {
+export default function SubscriptionPlanList() {
   return (
     <motion.div
       variants={listVariants}
@@ -14,7 +14,7 @@ export default function PlanList() {
       className="grid grid-cols-1 sm:grid-cols-6 gap-4"
     >
       {plans.map((plan) => (
-        <PlanCard key={plan.name} selectedPlan={plan} />
+        <SubscriptionPlanCard key={plan.name} selectedPlan={plan} />
       ))}
     </motion.div>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import AnimateItems from "@/components/shared/animateItems";
-import PlanList from "@/components/features/checkout/planList";
+import SubscriptionPlanList from "@/components/features/checkout/SubscriptionPlanList";
 import UserForm from "@/components/features/checkout/userForm";
 
 export default function Checkout() {
@@ -16,7 +16,7 @@ export default function Checkout() {
           subscription boxes.
         </p>
         <AnimateItems>
-          <PlanList />
+          <SubscriptionPlanList />
         </AnimateItems>
       </div>
       <UserForm />

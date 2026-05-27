@@ -5,12 +5,12 @@ interface State {
   answers: Record<string, string[]>;
   error: string | null;
   step: number;
-  direction: number;
+  animationDirection: number;
 }
 
 interface Quiz extends State {
   setError: (message: string | null) => void;
-  setStepDirection: (direction: number) => void;
+  setAnimationDirection: (direction: number) => void;
   setStep: (step: number) => void;
   setQuizAnswers: (id: string, answer: string[]) => void;
   resetQuizState: () => void;
@@ -20,7 +20,7 @@ const initialState: State = {
   answers: {},
   error: null,
   step: 0,
-  direction: 1,
+  animationDirection: 1,
 };
 
 export const useQuiz = create<Quiz>()(
@@ -28,8 +28,8 @@ export const useQuiz = create<Quiz>()(
     (set) => ({
       ...initialState,
 
-      setStepDirection: (direction) => {
-        set({ direction });
+      setAnimationDirection: (direction) => {
+        set({ animationDirection: direction });
       },
       setStep: (step) => {
         set({ step });
