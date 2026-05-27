@@ -35,7 +35,7 @@ export const useCheckout = create<Checkout>()(
         set({ plan });
       },
       resetCheckoutState: () => {
-        set(initialState);
+        set((state) => ({ ...initialState, userData: state.userData }));
       },
     }),
     {
