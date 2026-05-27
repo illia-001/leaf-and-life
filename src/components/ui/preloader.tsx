@@ -16,10 +16,11 @@ export const Preloader = () => {
   return (
     <div className="flex flex-col items-center gap-10">
         <Image
-          src="/preloading-image.png"
+          src="https://res.cloudinary.com/dryw0xncr/image/upload/v1779884675/A_lush_Monstera_Deliciosa_plant_kdtnmh.png"
           width={250}
           height={250}
-          alt="preloading-image"
+        alt="preloading-image"
+        loading="eager"
           className="rounded-full object-contain z-1 sm:w-75 md:w-100 border border-accent "
         />
 
