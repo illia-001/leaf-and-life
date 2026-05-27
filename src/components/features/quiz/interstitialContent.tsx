@@ -1,8 +1,8 @@
-import { Interstitial } from "@/types/IInterstitialt";
+import { IInterstitial } from "@/types/IInterstitialt";
 import Image from "next/image";
 import Icon from "../../ui/icon";
 
-export const InterstitialContent = ({ item }: { item: Interstitial }) => {
+export const InterstitialContent = ({ item }: { item: IInterstitial }) => {
   const { title, description, image, icons } = item;
   return (
     <div className="flex flex-col items-center space-y-4 gap-4">
