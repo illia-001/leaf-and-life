@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { useQuiz } from "@/hooks/useQuiz";
 import { useCheckout } from "@/hooks/useChackout";
 import amplitude from "@/amplitude/amplitude";
+import { Button } from "@/components/ui/button";
 
 interface Props {
   isVisible: (status: boolean) => void;
@@ -42,13 +43,13 @@ export default function CheckoutModal({ isVisible }: Props) {
         />
 
         <div className="relative w-full max-w-md flex flex-col gap-6 p-8 shadow-2xl bg-secondary border-2 border-accent rounded-3xl z-10 animate-in fade-in zoom-in-95 duration-200">
-          <button
+          <Button
             className="absolute top-4 right-4 text-text/70 hover:text-text cursor-pointer transition-colors"
             onClick={handleCloseModal}
             aria-label="Close modal"
           >
             <IoClose size={28} />
-          </button>
+          </Button>
 
           <div className="flex flex-col items-center gap-5 mt-2">
             {isLoading ? (

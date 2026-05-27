@@ -57,16 +57,17 @@ export default function NavigationBar({
   return (
     <div className="flex border-t-2 px-4 py-6 md:justify-end bg-secondary gap-4 sticky bottom-0 left-0 right-0 z-10">
       {step > 0 && (
-        <button
+        <Button
           onClick={handleBack}
-          className="flex items-center justify-center text-accent border-2 border-accent w-30 cursor-pointer p-2 rounded-2xl"
+          color="secondary"
+          className="flex items-center justify-center text-text border-2 border-accent w-30 rounded-2xl"
         >
           <IoArrowBack size={25} />
           Back
-        </button>
+        </Button>
       )}
 
-      <Button onSubmit={handleSubmit} classname="md:w-75">
+      <Button onClick={handleSubmit} className="w-full h-13 md:w-75">
         {buttonLabel}
       </Button>
     </div>

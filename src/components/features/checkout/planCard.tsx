@@ -1,7 +1,7 @@
 import { useQuiz } from "@/hooks/useQuiz";
 import { Button } from "../../ui/button";
 import { ISubscriptionPlan } from "@/types/ISubscriptionPlan";
-import { motion } from "framer-motion";
+import { motion, scale } from "framer-motion";
 import { cardVariants } from "@/styles/animations/cardVariants";
 import { useCheckout } from "@/hooks/useChackout";
 
@@ -38,7 +38,6 @@ export default function PlanCard({ selectedPlan }: Props) {
     >
       <motion.div
         whileHover={{ scale: 1.01, y: -2 }}
-        whileTap={{ scale: 0.99 }}
         onClick={() => handleSelectPlan(plan)}
         className="flex w-full flex-col justify-between shadow-[0_16px_32px_-12px_#0D21191A] p-8 rounded-2xl border-2"
       >

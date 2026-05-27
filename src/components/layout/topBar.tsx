@@ -35,6 +35,7 @@ export default function TopBar() {
       <div className="flex justify-between items-center">
         {step + 1 === totalSteps && (
           <button
+            name="Back to questions"
             onClick={handleBack}
             className="text-center text-text cursor-pointer p-2"
           >
@@ -44,6 +45,7 @@ export default function TopBar() {
         <h1 className="text-text font-sans text-2xl">Leaf & Life</h1>
         <button
           onClick={handleCloseQuiz}
+          name="Close quiz"
           className="text-center text-text cursor-pointer p-2"
         >
           <IoClose size={25} className="lg:size-10" />

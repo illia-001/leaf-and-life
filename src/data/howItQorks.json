@@ -1,17 +1,17 @@
 [
   {
     "title": "The Quiz",
-    "descritption": "Tell us about your space, light, and schedule in a 2-minute assessment.",
+    "description": "Tell us about your space, light, and schedule in a 2-minute assessment.",
     "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779798864/quiz_pm17lo.svg"
   },
   {
     "title": "The Curation",
-    "descritption": "Our experts select species that will thrive in your specific conditions.",
+    "description": "Our experts select species that will thrive in your specific conditions.",
     "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779798861/curation_aajrok.svg"
   },
   {
     "title": "The Delivery",
-    "descritption": "Beautiful plants arrive at your doorstep in eco-friendly packaging.",
+    "description": "Beautiful plants arrive at your doorstep in eco-friendly packaging.",
     "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779798862/delivery_lgjtxm.svg"
   }
 ]
