@@ -1,8 +1,9 @@
 import { IoArrowBack } from "react-icons/io5";
 import { Button } from "../ui/button";
 import { useAnswers, useQuiz } from "@/hooks/useQuiz";
-import { ItemType } from "@/types/itemType";
+import { IItemType } from "@/types/IItemType";
 import { useEffect } from "react";
+import amplitude from "@/amplitude/amplitude";
 
 interface Props {
   type?: string;
@@ -33,14 +34,23 @@ export default function NavigationBar({
   };
 
   const handleSubmit = () => {
-    if (type !== ItemType.INTER && !answers?.length) {
+    if (type !== IItemType.INTER && !answers?.length) {
       setError("Choose the answer!");
       return;
     }
+    
+    amplitude.track("quiz_step_completed", {
+      step_number: step + 1,
+      question_title: id,
+    });
 
     if (step < totalSteps) {
       setStepDirection(1);
       setStep(step + 1);
+    }
+
+    if (step === totalSteps - 1) {
+      amplitude.track("checkout_viewed");
     }
   };
 

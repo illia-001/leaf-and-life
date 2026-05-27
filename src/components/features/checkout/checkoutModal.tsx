@@ -5,6 +5,7 @@ import { IoCheckmarkDoneCircleSharp, IoClose } from "react-icons/io5";
 import { useRouter } from "next/navigation";
 import { useQuiz } from "@/hooks/useQuiz";
 import { useCheckout } from "@/hooks/useChackout";
+import amplitude from "@/amplitude/amplitude";
 
 interface Props {
   isVisible: (status: boolean) => void;
@@ -19,6 +20,7 @@ export default function CheckoutModal({ isVisible }: Props) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
+      amplitude.track("payment_success");
     }, 2000);
 
     return () => clearTimeout(timer);
@@ -27,8 +29,8 @@ export default function CheckoutModal({ isVisible }: Props) {
   const handleCloseModal = () => {
     isVisible(false);
     router.push("/");
-    resetCheckoutState();
-    resetQuizState();
+    // resetCheckoutState();
+    // resetQuizState();
   };
 
   return (

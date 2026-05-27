@@ -6,15 +6,16 @@ import quizStep from "@/data/quizSteps.json";
 import PaymentForm from "./paymentForm";
 import React, { useState } from "react";
 import CheckoutModal from "./checkoutModal";
-import { UserData } from "@/types/userData";
+import { IUserData } from "@/types/IUserData";
 import Icon from "../../ui/icon";
 import { useCheckout } from "@/hooks/useChackout";
+import amplitude from "@/amplitude/amplitude";
 
 export default function UserForm() {
   const { setError } = useQuiz();
   const { userData, plan, setUserData } = useCheckout();
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [userInfo, setUserInfo] = useState<UserData>(userData);
+  const [userInfo, setUserInfo] = useState<IUserData>(userData);
 
   const formData = quizStep.at(-1);
   const fields = formData?.fields;
@@ -29,6 +30,8 @@ export default function UserForm() {
       setError("Please choose plan!");
       return;
     }
+
+    amplitude.track("payment_submitted");
 
     setUserData(userInfo);
     setIsModalVisible(true);
@@ -66,7 +69,7 @@ export default function UserForm() {
                       handleChangeData(event.target.value, item.id)
                     }
                     value={
-                      (userInfo[item.id as keyof UserData] as string) || ""
+                      (userInfo[item.id as keyof IUserData] as string) || ""
                     }
                   />
                   <Icon

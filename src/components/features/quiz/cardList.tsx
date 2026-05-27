@@ -1,14 +1,14 @@
 import React from "react";
 import Card from "./card";
 import { useAnswers, useQuiz } from "@/hooks/useQuiz";
-import { Question } from "@/types/Question";
+import { IQuestion } from "@/types/IQuestion";
 
 import { motion } from "framer-motion";
-import { ItemType } from "@/types/itemType";
+import { IItemType } from "@/types/IItemType";
 import { listVariants } from "@/styles/animations/listVariants";
 
 interface Props {
-  items: Question;
+  items: IQuestion;
   id: string;
 }
 
@@ -20,7 +20,7 @@ export const CardList: React.FC<Props> = ({ items, id }) => {
   const handleSetAnswer = (value: string) => {
     setError(null);
 
-    if (items.type === ItemType.SINGLE) {
+    if (items.type === IItemType.SINGLE) {
       if (answers.includes(value)) {
         setQuizAnswers(id, []);
       } else {
@@ -28,7 +28,7 @@ export const CardList: React.FC<Props> = ({ items, id }) => {
       }
     }
 
-    if (items.type === ItemType.MULTIPLE) {
+    if (items.type === IItemType.MULTIPLE) {
       if (answers.includes(value)) {
         const actualAnswers = answers.filter((answer) => answer !== value);
         setQuizAnswers(id, [...actualAnswers]);

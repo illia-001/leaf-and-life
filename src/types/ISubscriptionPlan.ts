@@ -1,4 +1,4 @@
-export interface SubscriptionPlan {
+export interface ISubscriptionPlan {
   name: string;
   price: string;
   period: string;

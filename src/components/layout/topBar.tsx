@@ -1,3 +1,5 @@
+"use client";
+
 import { useRouter } from "next/navigation";
 import { IoChevronBack, IoClose } from "react-icons/io5";
 

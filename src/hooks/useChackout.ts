@@ -1,16 +1,16 @@
-import { SubscriptionPlan } from "@/types/subscriptionPlan";
-import { UserData } from "@/types/userData";
+import { ISubscriptionPlan } from "@/types/ISubscriptionPlan";
+import { IUserData } from "@/types/IUserData";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 interface State {
-  plan: SubscriptionPlan | null;
-  userData: UserData;
+  plan: ISubscriptionPlan | null;
+  userData: IUserData;
 }
 
 interface Checkout extends State {
-  setUserData: (userData: UserData) => void;
-  setPlan: (plan: SubscriptionPlan | null) => void;
+  setUserData: (userData: IUserData) => void;
+  setPlan: (plan: ISubscriptionPlan | null) => void;
   resetCheckoutState: () => void;
 }
 

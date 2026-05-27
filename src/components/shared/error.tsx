@@ -1,3 +1,4 @@
+"use client";
 import { useQuiz } from "@/hooks/useQuiz";
 import { useEffect } from "react";
 import { AnimatePresence, motion, Variants } from "framer-motion";
@@ -29,8 +30,7 @@ export default function Error() {
           className="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-full max-w-100 px-4 pointer-events-none"
         >
           <div
-            className={
-              `w-full 
+            className={`w-full 
               min-h-10
               text-error-text
               backdrop-blur-sm
@@ -43,8 +43,7 @@ export default function Error() {
               rounded-xl
               flex
               items-center
-              justify-center`
-            }
+              justify-center`}
           >
             {error}
           </div>

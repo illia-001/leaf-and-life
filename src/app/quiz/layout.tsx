@@ -1,4 +1,3 @@
-"use client";
 import TopBar from "@/components/layout/topBar";
 
 export default function QuizLayout({

@@ -9,6 +9,8 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@amplitude/ampli": "^1.36.3",
+    "@amplitude/unified": "^1.1.9",
     "classnames": "^2.5.1",
     "framer-motion": "^12.40.0",
     "next": "16.2.6",

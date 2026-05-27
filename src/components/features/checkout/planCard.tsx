@@ -1,12 +1,12 @@
 import { useQuiz } from "@/hooks/useQuiz";
 import { Button } from "../../ui/button";
-import { SubscriptionPlan } from "@/types/subscriptionPlan";
+import { ISubscriptionPlan } from "@/types/ISubscriptionPlan";
 import { motion } from "framer-motion";
 import { cardVariants } from "@/styles/animations/cardVariants";
 import { useCheckout } from "@/hooks/useChackout";
 
 interface Props {
-  selectedPlan: SubscriptionPlan;
+  selectedPlan: ISubscriptionPlan;
 }
 
 export default function PlanCard({ selectedPlan }: Props) {
