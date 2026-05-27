@@ -17,7 +17,7 @@ export const InterstitialContent = ({ item }: { item: IInterstitial }) => {
       <article className="flex flex-col items-center gap-6 sm:col-span-3">
         <h1 className="font-sans text-2xl text-accent text-center">{title}</h1>
 
-        <p className="text-accent">{description}</p>
+        <p className="text-accent text-center">{description}</p>
         <div className="flex gap-4 w-full justify-center">
           {icons.map((icon) => (
             <div
