@@ -58,7 +58,10 @@
         "url": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779820915/qr-code-02-svgrepo-com_qx4t4v.svg",
         "label": "QR Code Scan"
       },
-      { "url": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779820914/bell-svgrepo-com_eompjh.svg", "label": "Automated Notifications" }
+      {
+        "url": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779820914/bell-svgrepo-com_eompjh.svg",
+        "label": "Automated Notifications"
+      }
     ],
     "description": "Each Box includes a unique QR code. Scan it to add your new plants to our digital schedule and get automated watering notifications.",
     "buttonLabel": "Got it, let's move on"
@@ -122,7 +125,10 @@
         "url": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779798862/delivery_lgjtxm.svg",
         "label": "Free Replacement"
       },
-      { "url": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779798864/guidance_yrnamb.svg", "label": "Expert Guidance" }
+      {
+        "url": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779798864/guidance_yrnamb.svg",
+        "label": "Expert Guidance"
+      }
     ],
     "description": "Don't worry about having a green thumb! If any plant from your box doesn't survive its first month, we will replace it absolutely free.",
     "buttonLabel": "Awesome, let's continue!"
@@ -208,7 +214,10 @@
         "url": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779798862/growth_e3ebl1.svg",
         "label": "Eco-Certified"
       },
-      { "url": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779819597/Icon_32_kcpq1a.svg", "label": "Plastic-Free" }
+      {
+        "url": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779819597/Icon_32_kcpq1a.svg",
+        "label": "Plastic-Free"
+      }
     ],
     "description": "All our plants come from eco-certified local nurseries, and our packaging is 100% biodegradable and plastic-free.",
     "buttonLabel": "Love that! Next question"
@@ -332,37 +341,6 @@
         "validation": { "minLength": 5 },
         "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779803550/city-town-residents-svgrepo-com_yt9h4i.svg"
       }
-    ],
-    "paymentFields": {
-      "id": "user_payment_form",
-      "type": "payment-form",
-      "question": "Checkout",
-      "fields": [
-        {
-          "id": "cardNumber",
-          "type": "text",
-          "label": "Visa/Mastercard",
-          "placeholder": "Card number",
-          "required": true,
-          "validation": { "mask": "0000-0000-0000-0000", "minLength": 16 }
-        },
-        {
-          "id": "cardDate",
-          "type": "text",
-          "label": "Date",
-          "placeholder": "MM / YY",
-          "required": true,
-          "validation": { "mask": "00 / 00", "minLength": 4 }
-        },
-        {
-          "id": "cardCvc",
-          "type": "text",
-          "label": "CVC",
-          "placeholder": "CVC",
-          "required": true,
-          "validation": { "minLength": 3, "mask": "000" }
-        }
-      ]
-    }
+    ]
   }
 ]

@@ -2,11 +2,11 @@
 
 import AnimateItems from "@/components/shared/animateItems";
 import SubscriptionPlanList from "@/components/features/checkout/SubscriptionPlanList";
-import UserForm from "@/components/features/checkout/userForm";
+import UserForm from "@/components/features/checkout/Forms/userForm";
 
 export default function Checkout() {
   return (
-    <div className="z-1 bg-primary flex flex-col gap-10 px-4 py-8">
+    <div className="z-1 bg-primary flex flex-col items-center gap-10 px-4 py-8">
       <div className="flex flex-col gap-4 col-span-full">
         <h1 className="text-text text-3xl text-center font-sans">
           Choose your green journey

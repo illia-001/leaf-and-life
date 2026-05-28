@@ -1,13 +1,13 @@
 import { IMaskInput } from "react-imask";
 import { useQuiz } from "@/hooks/useQuiz";
-import { Button } from "../../ui/button";
+import { Button } from "../../../ui/button";
 
 import quizStep from "@/data/quizSteps.json";
 import PaymentForm from "./paymentForm";
 import React, { useState } from "react";
-import CheckoutModal from "./checkoutModal";
+import CheckoutModal from "../checkoutModal";
 import { IUserData } from "@/types/IUserData";
-import Icon from "../../ui/icon";
+import Icon from "../../../ui/icon";
 import { useCheckout } from "@/hooks/useChackout";
 import amplitude from "@/amplitude/amplitude";
 
@@ -41,10 +41,10 @@ export default function UserForm() {
     <>
       <form
         id="form"
-        className="grid grid-cols-1 md:grid-cols-6 gap-8 p-4 col-span-full bg-primary items-start"
+        className="grid grid-cols-1 md:grid-cols-6 gap-8 p-4 max-w-4xl col-span-full bg-primary items-start"
         onSubmit={handleSumbit}
       >
-        <section className="grid grid-cols-1 grid-rows-[auto_1fr] gap-4 md:col-span-3 w-full max-w-xl justify-self-center md:justify-self-start">
+        <section className="grid grid-cols-1 grid-rows-[auto_1fr] gap-4 md:col-span-3 max-w-100 justify-self-center md:justify-self-start">
           <h1 className="text-text font-sans text-2xl text-left font-semibold min-h-16 flex items-center">
             {formData?.question}
           </h1>
@@ -82,9 +82,9 @@ export default function UserForm() {
           </div>
         </section>
 
-        <div className="md:col-span-3 w-full max-w-xl justify-self-center md:justify-self-end flex flex-col gap-6">
+        <div className="md:col-span-3 max-w-xl justify-self-center md:justify-self-end flex flex-col gap-6">
           <PaymentForm onChange={handleChangeData} />
-          <Button className="w-full md:w-75 self-end">Submit</Button>
+          <Button className="w-full self-end">Submit</Button>
         </div>
       </form>
       {isModalVisible && <CheckoutModal isVisible={setIsModalVisible} />}
