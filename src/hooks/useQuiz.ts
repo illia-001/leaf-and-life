@@ -1,3 +1,4 @@
+import { AnimationDirection } from "@/constants/animationDirection";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
@@ -20,7 +21,7 @@ const initialState: State = {
   answers: {},
   error: null,
   step: 0,
-  animationDirection: 1,
+  animationDirection: AnimationDirection.FORWARD,
 };
 
 export const useQuiz = create<Quiz>()(

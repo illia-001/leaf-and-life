@@ -45,7 +45,7 @@ export default function UserForm() {
         onSubmit={handleSumbit}
       >
         <section className="grid grid-cols-1 grid-rows-[auto_1fr] gap-4 md:col-span-3 max-w-100 justify-self-center md:justify-self-start">
-          <h1 className="text-text font-sans text-2xl text-left font-semibold min-h-16 flex items-center">
+          <h1 className="text-text text-2xl text-left font-semibold min-h-16 flex items-center">
             {formData?.question}
           </h1>
 
@@ -53,7 +53,7 @@ export default function UserForm() {
             {fields?.map((item) => (
               <label
                 key={item.id}
-                className="flex flex-col w-full gap-2 text-accent font-mono font-semibold"
+                className="flex flex-col w-full gap-2 text-accent font-semibold"
               >
                 {item.label}
                 <div className="flex gap-2 items-center border border-gray-400 px-2 rounded-xl focus-within:border-accent has-[input:user-invalid]:border-error-border">

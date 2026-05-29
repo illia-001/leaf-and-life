@@ -15,7 +15,7 @@ export const InterstitialContent = ({ item }: { item: IInterstitial }) => {
         className="aspect-square lg:w-110 object-cover rounded-2xl mb-10 col-span-full sm:col-span-3"
       />
       <article className="flex flex-col items-center gap-6 sm:col-span-3">
-        <h1 className="font-sans text-2xl text-accent text-center">{title}</h1>
+        <h1 className="text-2xl text-accent text-center">{title}</h1>
 
         <p className="text-accent text-center">{description}</p>
         <div className="flex gap-4 w-full justify-center">

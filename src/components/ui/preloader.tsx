@@ -2,13 +2,14 @@ import Image from "next/image";
 import { useEffect } from "react";
 import Loader from "./loader";
 import { useRouter } from "next/navigation";
+import { ROUTES } from "@/constants/Routing";
 
 export const Preloader = () => {
   const router = useRouter();
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      router.push("quiz/checkout");
+      router.push(ROUTES.CHECKOUT);
     }, 3000);
 
     return () => clearTimeout(timer);
@@ -25,7 +26,7 @@ export const Preloader = () => {
         />
 
       <article className="flex flex-col gap-4">
-        <h1 className="text-text font-sans text-3xl text-center">
+        <h1 className="text-text text-3xl text-center">
           Curating your perfect botanical matches...
         </h1>
         <p className="text-accent text-center">

@@ -7,6 +7,8 @@ import quizSteps from "@/data/quizSteps.json";
 import ProgressBar from "../ui/progressBar";
 import Error from "../shared/error";
 import { useQuiz } from "@/hooks/useQuiz";
+import { AnimationDirection } from "@/constants/animationDirection";
+import { ROUTES } from "@/constants/Routing";
 
 export default function TopBar() {
   const { step, setStep, setAnimationDirection } = useQuiz();
@@ -14,13 +16,13 @@ export default function TopBar() {
   const totalSteps = quizSteps.length;
 
   const handleCloseQuiz = () => {
-    router.push("/");
-    setAnimationDirection(1);
+    router.push(ROUTES.HOME);
+    setAnimationDirection(AnimationDirection.FORWARD);
   };
 
   const handleBack = () => {
-    router.push("/quiz");
-    setAnimationDirection(-1);
+    router.push(ROUTES.QUIZ);
+    setAnimationDirection(AnimationDirection.BACK);
     setStep(step - 1);
   };
 
@@ -31,7 +33,7 @@ export default function TopBar() {
   };
 
   return (
-    <div className="w-full h-16 lg:h-18 bg-primary px-2 sticky top-0 z-2">
+    <div className="w-full h-16 md:h-18 bg-primary px-2 sticky top-0 z-2">
       <div className="flex justify-between items-center">
         {step + 1 === totalSteps && (
           <button
@@ -39,16 +41,16 @@ export default function TopBar() {
             onClick={handleBack}
             className="text-center text-text cursor-pointer p-2"
           >
-            <IoChevronBack size={25} className="lg:size-10" />
+            <IoChevronBack size={25} className="md:size-10" />
           </button>
         )}
-        <h1 className="text-text font-sans text-2xl">Leaf & Life</h1>
+        <h1 className="text-text text-2xl">Leaf & Life</h1>
         <button
           onClick={handleCloseQuiz}
           name="Close quiz"
           className="text-center text-text cursor-pointer p-2"
         >
-          <IoClose size={25} className="lg:size-10" />
+          <IoClose size={25} className="md:size-10" />
         </button>
       </div>
       <ProgressBar

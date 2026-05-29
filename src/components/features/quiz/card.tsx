@@ -39,7 +39,7 @@ export const Card: React.FC<Props> = ({
         whileTap={{ scale: 0.99 }}
         onClick={() => onSelect(value)}
         className={cn(
-          "space-y-3 w-full max-w-175 border-2 transition-all duration-300 ease-out cursor-pointer h-auto bg-secondary rounded-3xl shadow-[0_16px_32px_-12px_#0D21191A] p-6",
+          "space-y-3 w-full max-w-175 border-2 transition-all duration-300 ease-out cursor-pointer h-auto bg-secondary rounded-3xl shadow-card p-6",
           { "border-accent": isChecked },
         )}
       >
@@ -50,7 +50,7 @@ export const Card: React.FC<Props> = ({
 
           <div
             className={cn(
-              "flex transition-all items-center justify-center w-5 h-5 rounded-full border-2 border-[#C1C8C2]",
+              "flex transition-all items-center justify-center w-5 h-5 rounded-full border-2 border-border",
               { "border-accent": isChecked },
             )}
           >

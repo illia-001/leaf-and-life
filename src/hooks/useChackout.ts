@@ -1,3 +1,4 @@
+import { defaultPlan } from "@/constants/defaultPlan";
 import { ISubscriptionPlan } from "@/types/ISubscriptionPlan";
 import { IUserData } from "@/types/IUserData";
 import { create } from "zustand";
@@ -21,7 +22,7 @@ const initialState: State = {
     email: "",
     address: "",
   },
-  subscriptionPlan: null,
+  subscriptionPlan: defaultPlan,
 };
 
 export const useCheckout = create<Checkout>()(

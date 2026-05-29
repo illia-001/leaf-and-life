@@ -7,6 +7,7 @@ import { useQuiz } from "@/hooks/useQuiz";
 import { useCheckout } from "@/hooks/useChackout";
 import amplitude from "@/amplitude/amplitude";
 import { Button } from "@/components/ui/button";
+import { ROUTES } from "@/constants/Routing";
 
 interface Props {
   isVisible: (status: boolean) => void;
@@ -29,7 +30,7 @@ export default function CheckoutModal({ isVisible }: Props) {
 
   const handleCloseModal = () => {
     isVisible(false);
-    router.push("/");
+    router.push(ROUTES.HOME);
     resetCheckoutState();
     resetQuizState();
   };
@@ -54,14 +55,14 @@ export default function CheckoutModal({ isVisible }: Props) {
           <div className="flex flex-col items-center gap-5 mt-2">
             {isLoading ? (
               <>
-                <h1 className="font-sans font-semibold text-center text-text text-2xl">
+                <h1 className="font-semibold text-center text-text text-2xl">
                   Processing...
                 </h1>
                 <Loader />
               </>
             ) : (
               <>
-                <h1 className="font-sans font-semibold text-center text-text text-2xl leading-snug">
+                <h1 className="font-semibold text-center text-text text-2xl leading-snug">
                   Payment has been successfully processed!
                 </h1>
                 <IoCheckmarkDoneCircleSharp size={56} className="text-text" />

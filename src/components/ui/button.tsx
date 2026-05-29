@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import cn from "classnames";
 import { motion } from "framer-motion";
 
@@ -10,11 +10,13 @@ interface Props {
   className?: string;
   children?: React.ReactNode;
   disabled?: boolean;
+  onHover?: boolean;
 }
 
 export const Button: React.FC<Props> = ({
+  onHover = true,
   onClick,
-  color = "accent",
+  color,
   className,
   children = "Next Step",
   disabled = false,
@@ -34,8 +36,8 @@ export const Button: React.FC<Props> = ({
 
   return (
     <motion.button
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
+      whileHover={onHover ? { scale: 1.05 } : undefined}
+      whileTap={onHover ? { scale: 0.95 } : undefined}
       type="submit"
       className={cn(
         "transition-all duration-300 text-primary text-center text-lg px-4 py-2 font-bold flex items-center justify-center rounded-3xl cursor-pointer",

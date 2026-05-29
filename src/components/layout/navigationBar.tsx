@@ -4,6 +4,7 @@ import { useAnswers, useQuiz } from "@/hooks/useQuiz";
 import { IItemType } from "@/types/IItemType";
 import { useEffect } from "react";
 import amplitude from "@/amplitude/amplitude";
+import { AnimationDirection } from "@/constants/animationDirection";
 
 interface Props {
   type?: string;
@@ -28,7 +29,7 @@ export default function NavigationBar({
   const handleBack = () => {
     setError(null);
     if (step > 0) {
-      setAnimationDirection(-1);
+      setAnimationDirection(AnimationDirection.BACK);
       setStep(step - 1);
     }
   };
@@ -45,7 +46,7 @@ export default function NavigationBar({
     });
 
     if (step < totalSteps) {
-      setAnimationDirection(1);
+      setAnimationDirection(AnimationDirection.FORWARD);
       setStep(step + 1);
     }
 

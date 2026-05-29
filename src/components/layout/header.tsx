@@ -2,16 +2,17 @@
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { useRouter } from "next/navigation";
+import { ROUTES } from "@/constants/Routing";
 
 export default function Header() {
   const router = useRouter();
   const handleClickButton = () => {
-    router.push("/quiz");
+    router.push(ROUTES.QUIZ);
   };
 
   return (
-    <header className="flex z-1 col-span-full justify-between items-center h-17 gap-4 w-full px-4 bg-[#FCF9F2CC]">
-      <Link href="/" className="font-semibold font-sans text-text text-2xl">
+    <header className="flex z-1 col-span-full justify-between items-center h-17 gap-4 w-full px-4 bg-primary">
+      <Link href={ROUTES.HOME} className="font-semibold text-text text-2xl">
         Leaf & Life
       </Link>
 

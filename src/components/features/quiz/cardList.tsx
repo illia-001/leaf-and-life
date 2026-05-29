@@ -6,6 +6,7 @@ import { IQuestion } from "@/types/IQuestion";
 import { motion } from "framer-motion";
 import { IItemType } from "@/types/IItemType";
 import { listVariants } from "@/styles/animations/listVariants";
+import { AnimationDirection } from "@/constants/animationDirection";
 
 interface Props {
   items: IQuestion;
@@ -14,18 +15,17 @@ interface Props {
 
 export const CardList: React.FC<Props> = ({ items, id }) => {
   const options = items.options;
-  const { setQuizAnswers, setError } = useQuiz();
+  const { setQuizAnswers, setError, setStep, step, setAnimationDirection } =
+    useQuiz();
   const answers = useAnswers(id) || [];
 
   const handleSetAnswer = (value: string) => {
     setError(null);
 
     if (items.type === IItemType.SINGLE) {
-      if (answers.includes(value)) {
-        setQuizAnswers(id, []);
-      } else {
-        setQuizAnswers(id, [value]);
-      }
+      setQuizAnswers(id, [value]);
+      setAnimationDirection(AnimationDirection.FORWARD);
+      setStep(step + 1);
     }
 
     if (items.type === IItemType.MULTIPLE) {

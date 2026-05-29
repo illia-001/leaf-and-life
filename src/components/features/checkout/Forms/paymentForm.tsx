@@ -10,12 +10,12 @@ const inputClassNames =
 export default function PaymentForm({ onChange }: Props) {
   return (
     <section className="grid grid-cols-1 grid-rows-[auto_1fr] max-w-100 gap-4 place-items-center">
-      <h1 className="text-text font-sans text-2xl text-left font-semibold min-h-16 flex items-center">
+      <h1 className="text-text text-2xl text-left font-semibold min-h-16 flex items-center">
         Checkout
       </h1>
 
       <div className="flex flex-col gap-4">
-        <label className="flex flex-col gap-2 text-accent font-mono font-semibold">
+        <label className="flex flex-col gap-2 text-accent font-semibold">
           Visa/Mastercard
           <IMaskInput
             type="text"
@@ -28,7 +28,7 @@ export default function PaymentForm({ onChange }: Props) {
           />
         </label>
         <div className="flex justify-between gap-2">
-          <label className="flex flex-col gap-2 text-accent font-mono font-semibold">
+          <label className="flex flex-col gap-2 text-accent font-semibold">
             Date
             <IMaskInput
               type="text"
@@ -40,7 +40,7 @@ export default function PaymentForm({ onChange }: Props) {
               onChange={(event) => onChange(event.target.value, "Date")}
             />
           </label>
-          <label className="flex flex-col gap-2 text-accent font-mono font-semibold">
+          <label className="flex flex-col gap-2 text-accent font-semibold">
             CVC
             <IMaskInput
               type="text"

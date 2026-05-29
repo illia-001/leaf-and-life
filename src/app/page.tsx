@@ -8,11 +8,12 @@ import whyLeafAndLife from "@/data/whyLeafeAndLife.json";
 import Icon from "@/components/ui/icon";
 import Footer from "@/components/layout/footer";
 import { useRouter } from "next/navigation";
+import { ROUTES } from "@/constants/Routing";
 
 export default function Home() {
   const router = useRouter();
   const handleClickButton = () => {
-    router.push("/quiz");
+    router.push(ROUTES.QUIZ);
   };
 
   return (
@@ -32,12 +33,12 @@ export default function Home() {
           />
         </div>
       </div>
-      <main className="min-h-screen z-10 grid grid-cols-1 bg-primary md:gap-x-4 md:grid-cols-6  px-4 lg:px-8">
+      <main className="min-h-screen z-10 grid grid-cols-1 bg-primary md:gap-x-4 md:grid-cols-6 px-4 lg:px-8">
         <section className="z-2 bg-primary flex flex-col items-center px-4 py-12 gap-4 col-span-full">
-          <h1 className="text-3xl font-sans text-text text-center font-semibold">
+          <h1 className="text-3xl text-text text-center font-semibold">
             Curating Tranquility, One Leaf at a Time
           </h1>
-          <p className="text-text-accent font-mono text-xl text-center">
+          <p className="text-text-accent text-xl text-center">
             Transform your living space into a personal sanctuary with plants
             perfectly matched to your lifestyle and home environment.
           </p>
@@ -45,7 +46,7 @@ export default function Home() {
         </section>
 
         <section className="z-2 rounded-2xl flex flex-col col-span-3 w-full items-center px-4 py-12 gap-12 bg-secondary mb-20">
-          <h1 className="text-3xl text-text text-center font-sans font-semibold">
+          <h1 className="text-3xl text-text text-center font-semibold">
             How it Works
           </h1>
           {howItWorks.map((item) => (
@@ -60,25 +61,25 @@ export default function Home() {
         </section>
 
         <section className="rounded-2xl flex flex-col md:col-span-3 items-center gap-12 mb-20 px-4 py-12 bg-secondary">
-          <h1 className="text-text font-semibold text-3xl font-sans">
+          <h1 className="text-text font-semibold text-3xl">
             Why Leaf & Life
           </h1>
           {whyLeafAndLife.map((item) => (
             <article
               key={item.title}
-              className="bg-secondary w-full gap-2 flex flex-col p-6 rounded-3xl shadow-[0_16px_32px_-8px_#0D211926]"
+              className="bg-secondary w-full gap-2 flex flex-col p-6 rounded-3xl shadow-card"
             >
               <Icon iconUrl={item.icon} classNames="bg-accent" />
 
-              <h2 className="text-text text-sm font-semibold pt-2 font-mono">
+              <h2 className="text-text text-sm font-semibold pt-2">
                 {item.title}
               </h2>
               <p className="text-text-accent">{item.description}</p>
             </article>
           ))}
         </section>
-        <section className="rounded-2xl bg-text flex col-span-full flex-col items-center px-4 py-24 gap-6 w-full shadow-[0_20px_15px_-3px_rgba(0,0,0,0.2)]">
-          <h1 className="text-3xl font-sans text-center w-63">
+        <section className="rounded-2xl bg-text flex col-span-full flex-col items-center px-4 py-24 gap-6 w-full shadow-card">
+          <h1 className="text-3xl text-center w-63">
             Ready to find your match?
           </h1>
           <h2 className="text-secondary text-center">

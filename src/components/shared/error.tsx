@@ -29,12 +29,12 @@ export default function Error() {
           exit="exit"
           className="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-full max-w-100 px-4 pointer-events-none"
         >
-          <div
+          <h1
             className={`w-full 
               min-h-10
               text-error-text
               backdrop-blur-sm
-              font-mono text-center
+              text-center
               bg-red-300/30
               border-2
               border-error-border
@@ -46,7 +46,7 @@ export default function Error() {
               justify-center`}
           >
             {error}
-          </div>
+          </h1>
         </motion.div>
       )}
     </AnimatePresence>

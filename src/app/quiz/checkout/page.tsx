@@ -8,7 +8,7 @@ export default function Checkout() {
   return (
     <div className="z-1 bg-primary flex flex-col items-center gap-10 px-4 py-8">
       <div className="flex flex-col gap-4 col-span-full">
-        <h1 className="text-text text-3xl text-center font-sans">
+        <h1 className="text-text text-3xl text-center">
           Choose your green journey
         </h1>
         <p className="text-accent text-center">

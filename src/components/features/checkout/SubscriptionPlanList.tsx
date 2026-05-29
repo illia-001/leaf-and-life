@@ -14,7 +14,7 @@ export default function SubscriptionPlanList() {
       className="grid grid-cols-1 sm:grid-cols-6 gap-4"
     >
       {plans.map((plan) => (
-        <SubscriptionPlanCard key={plan.name} selectedPlan={plan} />
+        <SubscriptionPlanCard key={plan.name} plan={plan} />
       ))}
     </motion.div>
   );
