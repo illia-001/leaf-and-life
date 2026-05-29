@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Discover Your Green Match | Leaf & Life",
     description: "Answer a few simple questions and get a personalized selection of sustainable indoor plants delivered to your door.",
-    url: "https://leaf-and-life.vercel.app/", 
+    url: "https://leaf-and-life.vercel.app/quiz", 
     siteName: "Leaf & Life",
     images: [
       {
