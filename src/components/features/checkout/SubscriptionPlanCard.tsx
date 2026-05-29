@@ -30,7 +30,7 @@ export default function SubscriptionPlanCard({ plan }: Props) {
       <motion.div
         whileHover={{ scale: 1.01, y: -2 }}
         onClick={handleSelectPlan}
-        className="flex w-full flex-col justify-between shadow-card p-8 rounded-2xl border-2"
+        className="flex w-full flex-col justify-between shadow-card py-8 px-4 rounded-2xl border-2"
       >
         <article>
           <div className="flex justify-between">
@@ -44,7 +44,7 @@ export default function SubscriptionPlanCard({ plan }: Props) {
             <span className="text-accent">{period}</span>
           </div>
         </article>
-        <Button onHover={false} color={subscriptionPlan?.name === name ? "active" : "accent"}>
+        <Button onHover={false} color={subscriptionPlan?.name === name ? "active" : "accent"} className="self-center sm:self-end w-full sm:w-75 lg:w-50">
           {subscriptionPlan?.name === name ? "Selected" : "Select Plan"}
         </Button>
       </motion.div>

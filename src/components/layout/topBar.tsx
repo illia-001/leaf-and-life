@@ -9,6 +9,7 @@ import Error from "../shared/error";
 import { useQuiz } from "@/hooks/useQuiz";
 import { AnimationDirection } from "@/constants/animationDirection";
 import { ROUTES } from "@/constants/Routing";
+import { Button } from "../ui/button";
 
 export default function TopBar() {
   const { step, setStep, setAnimationDirection } = useQuiz();
@@ -36,22 +37,22 @@ export default function TopBar() {
     <div className="w-full h-16 md:h-18 bg-primary px-2 sticky top-0 z-2">
       <div className="flex justify-between items-center">
         {step + 1 === totalSteps && (
-          <button
+          <Button
             name="Back to questions"
             onClick={handleBack}
-            className="text-center text-text cursor-pointer p-2"
+            className="text-center text-text"
           >
             <IoChevronBack size={25} className="md:size-10" />
-          </button>
+          </Button>
         )}
         <h1 className="text-text text-2xl">Leaf & Life</h1>
-        <button
+        <Button
           onClick={handleCloseQuiz}
           name="Close quiz"
-          className="text-center text-text cursor-pointer p-2"
+          className="text-center text-text"
         >
           <IoClose size={25} className="md:size-10" />
-        </button>
+        </Button>
       </div>
       <ProgressBar
         currentStep={step + 1}

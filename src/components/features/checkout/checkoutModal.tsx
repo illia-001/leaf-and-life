@@ -4,7 +4,6 @@ import Loader from "../../ui/loader";
 import { IoCheckmarkDoneCircleSharp, IoClose } from "react-icons/io5";
 import { useRouter } from "next/navigation";
 import { useQuiz } from "@/hooks/useQuiz";
-import { useCheckout } from "@/hooks/useChackout";
 import amplitude from "@/amplitude/amplitude";
 import { Button } from "@/components/ui/button";
 import { ROUTES } from "@/constants/Routing";
@@ -17,7 +16,6 @@ export default function CheckoutModal({ isVisible }: Props) {
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
   const { resetQuizState } = useQuiz();
-  const { resetCheckoutState } = useCheckout();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -31,7 +29,6 @@ export default function CheckoutModal({ isVisible }: Props) {
   const handleCloseModal = () => {
     isVisible(false);
     router.push(ROUTES.HOME);
-    resetCheckoutState();
     resetQuizState();
   };
 
@@ -45,7 +42,7 @@ export default function CheckoutModal({ isVisible }: Props) {
 
         <div className="relative w-full max-w-md flex flex-col gap-6 p-8 shadow-2xl bg-secondary border-2 border-accent rounded-3xl z-10 animate-in fade-in zoom-in-95 duration-200">
           <Button
-            className="absolute top-4 right-4 text-text/70 hover:text-text cursor-pointer transition-colors"
+            className="absolute top-2 right-2 text-text/70 hover:text-text"
             onClick={handleCloseModal}
             aria-label="Close modal"
           >

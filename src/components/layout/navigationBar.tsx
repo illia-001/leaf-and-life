@@ -68,7 +68,7 @@ export default function NavigationBar({
         </Button>
       )}
 
-      <Button onClick={handleSubmit} className="w-full h-13 md:w-75">
+      <Button color='accent' onClick={handleSubmit} className="w-full h-13 md:w-75">
         {buttonLabel}
       </Button>
     </div>
