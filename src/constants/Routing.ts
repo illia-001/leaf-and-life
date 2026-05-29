@@ -1,4 +1,5 @@
 export const ROUTES = {
+  HOME: "/",
   QUIZ: "/quiz",
   CHECKOUT: "/quiz/checkout",
   SUSTAINABILITY: "/sustainability",

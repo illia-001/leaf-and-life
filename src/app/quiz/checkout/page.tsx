@@ -16,9 +16,9 @@ export default function Checkout() {
 
   useEffect(() => {
     if (!hasAnswers) {
-      router.replace(ROUTES.QUIZ);
+      router.push(ROUTES.QUIZ);
     }
-  }, [router, hasAnswers]);
+  }, []);
 
   return (
     <div className="z-1 bg-primary flex flex-col items-center gap-10 px-4 py-8">
