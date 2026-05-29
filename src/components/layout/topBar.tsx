@@ -17,7 +17,7 @@ export default function TopBar() {
   const totalSteps = quizSteps.length;
 
   const handleCloseQuiz = () => {
-    router.push(ROUTES.HOME);
+    router.push('/');
     setAnimationDirection(AnimationDirection.FORWARD);
   };
 

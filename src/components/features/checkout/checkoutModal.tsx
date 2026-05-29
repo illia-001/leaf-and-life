@@ -28,7 +28,7 @@ export default function CheckoutModal({ isVisible }: Props) {
 
   const handleCloseModal = () => {
     isVisible(false);
-    router.push(ROUTES.HOME);
+    router.push('/');
     resetQuizState();
   };
 

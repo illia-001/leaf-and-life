@@ -12,7 +12,7 @@ const footerRouting = [
 export default function Footer() {
   return (
     <footer className="flex sticky bottom-0 flex-col gap-6 px-4 py-12 bg-secondary lg:px-8">
-      <Link href={ROUTES.HOME} className="font-semibold font-serif text-text text-2xl">
+      <Link href={'/'} className="font-semibold font-serif text-text text-2xl">
         Leaf & Life
       </Link>
 
