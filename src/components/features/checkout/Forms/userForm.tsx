@@ -37,17 +37,12 @@ export default function UserForm() {
     setUserData(userInfo);
   };
 
-  const handleInvalid = (event: React.FormEvent) => {
-  event.preventDefault();
-};
-
   return (
     <>
       <form
         id="form"
         className="grid grid-cols-1 md:grid-cols-6 gap-8 max-w-4xl col-span-full bg-primary items-start"
         onSubmit={handleSumbit}
-        onInvalid={handleInvalid}
       >
         <section className="grid grid-cols-1 grid-rows-[auto_1fr] gap-4 md:col-span-3 max-w-100 justify-self-center md:justify-self-start">
           <h1 className="text-text text-2xl text-left font-semibold min-h-16 flex items-center">
