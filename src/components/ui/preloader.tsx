@@ -8,13 +8,14 @@ import Icon from "./icon";
 export const Preloader = () => {
   const router = useRouter();
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     router.push(ROUTES.CHECKOUT);
-  //   }, 3000);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      router.push(ROUTES.CHECKOUT);
+    }, 3000);
 
-  //   return () => clearTimeout(timer);
-  // });
+    return () => clearTimeout(timer);
+  });
+  
   return (
     <div className="flex flex-col items-center gap-10">
       <Image
@@ -30,7 +31,7 @@ export const Preloader = () => {
         <h1 className="text-text text-3xl text-center">
           Curating your perfect botanical matches...
         </h1>
-        <p className="text-accent text-center mb-10">
+        <p className="text-accent text-center mb-5 sm:mb-10">
           We&apos;re analyzing your lighting, space, and care style to find
           plants that will thrive in your home.
         </p>
