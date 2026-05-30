@@ -56,13 +56,14 @@ export default function UserForm() {
                 className="flex flex-col w-full gap-2 text-accent font-semibold"
               >
                 {item.label}
-                <div className="flex gap-2 items-center border border-gray-400 px-2 rounded-xl focus-within:border-accent has-[input:user-invalid]:border-error-border">
+                <div className="flex gap-2 items-center border border-gray-400 rounded-xl focus-within:border-accent has-[input:user-invalid]:border-error-border">
                   <IMaskInput
                     type={item.type}
                     className="h-13 w-full order-2 outline-none text-text peer bg-transparent"
                     placeholder={item.placeholder}
                     minLength={item.validation.minLength}
                     mask={item.validation.mask}
+                    autoComplete={item.autoComplite}
                     pattern={item.validation.pattern}
                     required={item.required}
                     onAccept={(_, maskRef) =>
@@ -74,7 +75,7 @@ export default function UserForm() {
                   />
                   <Icon
                     iconUrl={item.icon}
-                    classNames="bg-accent peer-user-invalid:bg-error-text"
+                    classNames="bg-accent peer-user-invalid:bg-error-text ml-2 shrink-0"
                   />
                 </div>
               </label>
@@ -84,7 +85,9 @@ export default function UserForm() {
 
         <div className="md:col-span-3 max-w-xl justify-self-center md:justify-self-end flex flex-col gap-6">
           <PaymentForm />
-          <Button color="accent" className="w-full self-end">Submit</Button>
+          <Button color="accent" className="w-full self-end">
+            Submit
+          </Button>
         </div>
       </form>
       {isModalVisible && <CheckoutModal isVisible={setIsModalVisible} />}
