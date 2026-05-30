@@ -16,17 +16,6 @@ export const metadata: Metadata = {
     title: "Discover Your Green Match | Leaf & Life",
     description: "Answer a few simple questions and get a personalized selection of sustainable indoor plants delivered to your door.",
     url: "https://leaf-and-life.vercel.app/quiz", 
-    siteName: "Leaf & Life",
-    images: [
-      {
-        url: "openGraphImage.png",
-        width: 1200,
-        height: 630,
-        alt: "Leaf & Life Personalized Plant Quiz",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
   }
 }
 

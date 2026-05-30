@@ -22,13 +22,6 @@ export const metadata: Metadata = {
   },
   description:
     "Discover curated houseplant boxes tailored to your space and lifestyle. Take our quick plant care quiz and start your green journey.",
-  keywords: [
-    "plant subscription",
-    "personalized plant box",
-    "houseplants delivery",
-    "indoor plants",
-    "plant care quiz",
-  ],
   icons: {
     icon: "https://res.cloudinary.com/dryw0xncr/image/upload/v1779884659/leaf-svgrepo-com_dw9kig.svg",
   },
