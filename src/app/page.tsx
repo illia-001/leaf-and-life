@@ -10,6 +10,8 @@ import Footer from "@/components/layout/footer";
 import { useRouter } from "next/navigation";
 import { ROUTES } from "@/constants/Routing";
 
+const homePageImage = "https://res.cloudinary.com/dryw0xncr/image/upload/v1779798491/Intro_h1tegm.png";
+
 export default function Home() {
   const router = useRouter();
   const handleClickButton = () => {
@@ -26,8 +28,8 @@ export default function Home() {
             height={0}
             sizes="100vw"
             style={{ width: "100%", height: "auto" }}
-            src="https://res.cloudinary.com/dryw0xncr/image/upload/v1779798491/Intro_h1tegm.png"
-            alt="intro-image"
+            src={homePageImage}
+            alt="home-page-image"
             loading="eager"
             className="sm:rounded-full z-2"
           />

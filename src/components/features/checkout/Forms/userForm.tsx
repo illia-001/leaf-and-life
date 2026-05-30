@@ -20,11 +20,11 @@ export default function UserForm() {
   const formData = quizStep.at(-1);
   const fields = formData?.fields;
 
-  const handleChangeData = (value: string | number, id: string) => {
+  const handleChangeData = (value: string, id: string) => {
     setUserInfo((prev) => ({ ...prev, [id]: value }));
   };
 
-  const handleSumbit = (event: React.FormEvent) => {
+  const handleSumbit = (event: React.SubmitEvent) => {
     event.preventDefault();
     if (!subscriptionPlan) {
       setError("Please choose plan!");
@@ -33,8 +33,8 @@ export default function UserForm() {
 
     amplitude.track("payment_submitted");
 
-    setUserData(userInfo);
     setIsModalVisible(true);
+    setUserData(userInfo);
   };
 
   return (
@@ -65,8 +65,8 @@ export default function UserForm() {
                     mask={item.validation.mask}
                     pattern={item.validation.pattern}
                     required={item.required}
-                    onChange={(event) =>
-                      handleChangeData(event.target.value, item.id)
+                    onAccept={(_, maskRef) =>
+                      handleChangeData(maskRef.unmaskedValue, item.id)
                     }
                     value={
                       (userInfo[item.id as keyof IUserData] as string) || ""
@@ -83,7 +83,7 @@ export default function UserForm() {
         </section>
 
         <div className="md:col-span-3 max-w-xl justify-self-center md:justify-self-end flex flex-col gap-6">
-          <PaymentForm onChange={handleChangeData} />
+          <PaymentForm />
           <Button color="accent" className="w-full self-end">Submit</Button>
         </div>
       </form>
