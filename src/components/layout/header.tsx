@@ -16,7 +16,7 @@ export default function Header() {
         Leaf & Life
       </Link>
 
-      <Button onClick={handleClickButton} className="bg-accent rounded-full">
+      <Button onClick={handleClickButton} className="bg-accent rounded-full px-4">
         Start Quiz
       </Button>
     </header>

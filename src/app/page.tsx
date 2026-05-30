@@ -44,7 +44,7 @@ export default function Home() {
             Transform your living space into a personal sanctuary with plants
             perfectly matched to your lifestyle and home environment.
           </p>
-          <Button  onClick={handleClickButton}>Take the Quiz</Button>
+          <Button  onClick={handleClickButton} className="bg-accent px-4">Take the Quiz</Button>
         </section>
 
         <section className="z-2 rounded-2xl flex flex-col col-span-3 w-full items-center px-4 py-12 gap-12 bg-secondary mb-20">
@@ -87,7 +87,7 @@ export default function Home() {
           <h2 className="text-secondary text-center">
             Start your journey toward a greener, more peaceful home today.
           </h2>
-          <Button onClick={handleClickButton} color="active">
+          <Button onClick={handleClickButton} className="px-4" color="active">
             Start Quiz
           </Button>
         </section>
