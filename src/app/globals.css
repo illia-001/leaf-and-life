@@ -33,6 +33,7 @@
   --color-error-bg: var(--error-bg);
   --color-error-border: var(--error-border);
   --shadow-card: 0 16px 32px -8px #0d211926;
+  --shadow-input: 0 0 5px #0d211950;
   --color-border: var(--border);
 }
 

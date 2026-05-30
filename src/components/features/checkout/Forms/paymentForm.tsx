@@ -1,7 +1,7 @@
 import { IMaskInput } from "react-imask";
 
 const inputClassNames =
-  "h-13 w-full outline-none text-text border border-gray-400 p-2 rounded-xl user-invalid:border-error-border user-valid:border-accent";
+  "h-13 w-full focus:shadow-input outline-none text-text border border-gray-400 p-2 rounded-xl user-invalid:border-error-border user-valid:border-accent";
 
 const cardInfoInputs = [
   {
@@ -32,7 +32,7 @@ export default function PaymentForm() {
       </h1>
 
       <div className="flex flex-col gap-4">
-        <label className="flex flex-col gap-2 text-accent font-semibold">
+        <label className="flex flex-col gap-2 text-accent font-semibold ">
           Visa/Mastercard
           <IMaskInput
             type="text"

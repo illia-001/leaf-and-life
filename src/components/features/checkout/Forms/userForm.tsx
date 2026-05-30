@@ -37,12 +37,17 @@ export default function UserForm() {
     setUserData(userInfo);
   };
 
+  const handleInvalid = (event: React.FormEvent) => {
+  event.preventDefault();
+};
+
   return (
     <>
       <form
         id="form"
-        className="grid grid-cols-1 md:grid-cols-6 gap-8 p-4 max-w-4xl col-span-full bg-primary items-start"
+        className="grid grid-cols-1 md:grid-cols-6 gap-8 max-w-4xl col-span-full bg-primary items-start"
         onSubmit={handleSumbit}
+        onInvalid={handleInvalid}
       >
         <section className="grid grid-cols-1 grid-rows-[auto_1fr] gap-4 md:col-span-3 max-w-100 justify-self-center md:justify-self-start">
           <h1 className="text-text text-2xl text-left font-semibold min-h-16 flex items-center">
@@ -56,10 +61,10 @@ export default function UserForm() {
                 className="flex flex-col w-full gap-2 text-accent font-semibold"
               >
                 {item.label}
-                <div className="flex gap-2 items-center border border-gray-400 rounded-xl focus-within:border-accent has-[input:user-invalid]:border-error-border">
+                <div className="flex overflow-hidden focus-within:shadow-input gap-2 items-center border rounded-xl focus-within:border-accent has-[input:user-invalid]:border-error-border">
                   <IMaskInput
                     type={item.type}
-                    className="h-13 w-full order-2 outline-none text-text peer bg-transparent"
+                    className="h-13 flex-1 order-2 outline-none text-text peer bg-transparent"
                     placeholder={item.placeholder}
                     minLength={item.validation.minLength}
                     mask={item.validation.mask}
