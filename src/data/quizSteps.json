@@ -329,7 +329,7 @@
         "label": "Phone Number",
         "placeholder": "+380 (XX) XXX-XX-XX",
         "required": true,
-        "validation": { "mask": "+380 (00) 000-00-00" },
+        "validation": { "mask": "+38\\0 (00) 000-00-00" },
         "icon": "https://res.cloudinary.com/dryw0xncr/image/upload/v1779803553/phone-svgrepo-com_f3kqho.svg"
       },
       {
