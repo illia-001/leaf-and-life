@@ -83,8 +83,15 @@ export default function UserForm() {
           </div>
         </section>
 
-        <div className="md:col-span-3 max-w-xl justify-self-center md:justify-self-end flex flex-col gap-6">
+        <div className="md:col-span-3 max-w-xl justify-self-center items-center md:justify-self-end flex flex-col gap-6">
           <PaymentForm />
+          <div className="px-5 w-full py-4 bg-secondary box-border flex rounded-xl gap-2">
+            <Icon iconUrl="https://res.cloudinary.com/dryw0xncr/image/upload/v1780161021/safe-lock-svgrepo-com_r25zre.svg" classNames="bg-accent shrink-0" size={20}></Icon>
+            <span className="text-accent text-sm">
+              We value your privacy. Your data is encrypted and used solely for
+              delivering your personalized plant matches and order updates.
+            </span>
+          </div>
           <Button color="accent" className="w-full self-end">
             Submit
           </Button>
