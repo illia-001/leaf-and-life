@@ -2,7 +2,7 @@
 
 A compact Next.js app for matching users with houseplants through a short adaptive quiz and subscription checkout.
 
-[Live Preview]([url](https://leaf-and-life.vercel.app/))
+## [Live Preview](https://leaf-and-life.vercel.app/)
 
 ## What it does
 
