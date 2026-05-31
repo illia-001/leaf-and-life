@@ -80,7 +80,7 @@ export default function Home() {
             </article>
           ))}
         </section>
-        <section className="rounded-2xl bg-text flex col-span-full flex-col items-center px-4 py-24 gap-6 w-full shadow-card">
+        <section className="rounded-2xl bg-accent flex col-span-full flex-col items-center px-4 py-24 gap-6 w-full shadow-card">
           <h1 className="text-3xl text-center w-63">
             Ready to find your match?
           </h1>

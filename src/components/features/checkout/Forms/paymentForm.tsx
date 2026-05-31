@@ -1,7 +1,7 @@
 import { IMaskInput } from "react-imask";
 
 const inputClassNames =
-  "h-13 w-full focus:shadow-input outline-none text-text border border-gray-400 p-2 rounded-xl user-invalid:border-error-border user-valid:border-accent";
+  "h-13 w-full focus:shadow-input outline-none text-text border p-2 rounded-xl user-invalid:border-error-border border-accent";
 
 const cardInfoInputs = [
   {

@@ -62,7 +62,7 @@ export default function CheckoutModal({ isVisible }: Props) {
                 <h1 className="font-semibold text-center text-text text-2xl leading-snug">
                   Payment has been successfully processed!
                 </h1>
-                <IoCheckmarkDoneCircleSharp size={56} className="text-text" />
+                <IoCheckmarkDoneCircleSharp size={56} className="text-accent" />
               </>
             )}
           </div>

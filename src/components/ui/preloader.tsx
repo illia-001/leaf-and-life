@@ -15,7 +15,7 @@ export const Preloader = () => {
 
     return () => clearTimeout(timer);
   });
-  
+
   return (
     <div className="flex flex-col items-center gap-10">
       <Image
@@ -36,7 +36,7 @@ export const Preloader = () => {
           plants that will thrive in your home.
         </p>
         <div className="flex flex-col md:flex-row gap-4">
-          <div className="flex gap-2 text-text items-center text-sm font-semibold">
+          <div className="flex gap-2 text-accent items-center text-sm font-semibold">
             <div className="bg-accent rounded-full w-8 aspect-square flex justify-center items-center">
               <Icon
                 iconUrl="https://res.cloudinary.com/dryw0xncr/image/upload/v1779801795/sun-2-svgrepo-com_m59vnc.svg"
@@ -46,7 +46,7 @@ export const Preloader = () => {
             </div>
             Lighting Analysis
           </div>
-          <div className="flex gap-2 text-text items-center text-sm font-semibold">
+          <div className="flex gap-2 text-accent items-center text-sm font-semibold">
             <div className="bg-accent rounded-full w-8 aspect-square flex justify-center items-center">
               <Icon
                 iconUrl="https://res.cloudinary.com/dryw0xncr/image/upload/v1780162048/Icon_33_jphe8f.svg"
@@ -56,7 +56,7 @@ export const Preloader = () => {
             </div>
             Space Mapping
           </div>
-          <div className="flex gap-2 text-text items-center text-sm font-semibold">
+          <div className="flex gap-2 text-accent items-center text-sm font-semibold">
             <div className="bg-accent rounded-full w-8 aspect-square flex justify-center items-center">
               <Icon
                 iconUrl="https://res.cloudinary.com/dryw0xncr/image/upload/v1779798864/guidance_yrnamb.svg"

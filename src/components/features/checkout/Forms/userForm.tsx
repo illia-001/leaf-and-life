@@ -50,43 +50,69 @@ export default function UserForm() {
           </h1>
 
           <div className="flex flex-col gap-4 w-full">
-            {fields?.map((item) => (
-              <label
-                key={item.id}
-                className="flex flex-col w-full gap-2 text-accent font-semibold"
-              >
-                {item.label}
-                <div className="flex overflow-hidden focus-within:shadow-input gap-2 items-center border rounded-xl focus-within:border-accent has-[input:user-invalid]:border-error-border">
-                  <IMaskInput
-                    type={item.type}
-                    className="h-13 flex-1 order-2 outline-none text-text peer bg-transparent"
-                    placeholder={item.placeholder}
-                    minLength={item.validation.minLength}
-                    mask={item.validation.mask}
-                    autoComplete={item.autoComplite}
-                    pattern={item.validation.pattern}
-                    required={item.required}
-                    onAccept={(_, maskRef) =>
-                      handleChangeData(maskRef.unmaskedValue, item.id)
-                    }
-                    value={
-                      (userInfo[item.id as keyof IUserData] as string) || ""
-                    }
-                  />
-                  <Icon
-                    iconUrl={item.icon}
-                    classNames="bg-accent peer-user-invalid:bg-error-text ml-2 shrink-0"
-                  />
-                </div>
-              </label>
-            ))}
+            {fields?.map((item) => {
+              const hasMask = !!item.validation.mask;
+              const currentValue =
+                (userInfo[item.id as keyof IUserData] as string) || "";
+
+              return (
+                <label
+                  key={item.id}
+                  className="flex flex-col w-full gap-2 text-accent font-semibold"
+                >
+                  {item.label}
+                  <div className="flex overflow-hidden focus-within:shadow-input gap-2 items-center border rounded-xl border-accent has-[input:user-invalid]:border-error-border">
+                    {hasMask ? (
+                      <IMaskInput
+                        type={item.type}
+                        className="h-13 flex-1 order-2 outline-none text-text peer bg-transparent"
+                        placeholder={item.placeholder}
+                        minLength={item.validation.minLength}
+                        mask={item.validation.mask}
+                        autoComplete={item.autoComplite}
+                        pattern={item.validation.pattern}
+                        required={item.required}
+                        onAccept={(_, maskRef) =>
+                          handleChangeData(maskRef.unmaskedValue, item.id)
+                        }
+                        value={currentValue}
+                      />
+                    ) : (
+                      <input
+                        type={item.type}
+                        className="h-13 flex-1 order-2 outline-none text-text peer bg-transparent"
+                        placeholder={item.placeholder}
+                        minLength={item.validation.minLength}
+                        autoComplete={item.autoComplite}
+                        pattern={item.validation.pattern}
+                        required={item.required}
+                        // Використовуємо стандартний onChange
+                        onChange={(e) =>
+                          handleChangeData(e.target.value, item.id)
+                        }
+                        value={currentValue}
+                      />
+                    )}
+
+                    <Icon
+                      iconUrl={item.icon}
+                      classNames="bg-accent peer-user-invalid:bg-error-text ml-2 shrink-0"
+                    />
+                  </div>
+                </label>
+              );
+            })}
           </div>
         </section>
 
         <div className="md:col-span-3 max-w-xl justify-self-center items-center md:justify-self-end flex flex-col gap-6">
           <PaymentForm />
           <div className="px-5 w-full py-4 bg-secondary box-border flex rounded-xl gap-2">
-            <Icon iconUrl="https://res.cloudinary.com/dryw0xncr/image/upload/v1780161021/safe-lock-svgrepo-com_r25zre.svg" classNames="bg-accent shrink-0" size={20}></Icon>
+            <Icon
+              iconUrl="https://res.cloudinary.com/dryw0xncr/image/upload/v1780161021/safe-lock-svgrepo-com_r25zre.svg"
+              classNames="bg-accent shrink-0"
+              size={20}
+            ></Icon>
             <span className="text-accent text-sm">
               We value your privacy. Your data is encrypted and used solely for
               delivering your personalized plant matches and order updates.

@@ -13,7 +13,29 @@
   --error-text: #fb2c36;
   --error-bg: oklch(88.5% 0.062 18.334);
   --error-border: #fb2c36;
-  --border: #C1C8C2;
+  --border: #c1c8c2;
+  --shadow: #0d211926;
+  --focus-input: #0d211950;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #121614;
+    --foreground: #1a1f1d;
+    --primary: #181d1b;
+    --secondary: #222926;
+    --text: #f4f7f5;
+    --text-accent: #a3b0a9;
+    --accent: #40916c;
+    --bg-icon: #1b3328;
+    --button-active: #a93216;
+    --border: #38423d;
+    --shadow: #00000059;
+    --focus-input: #c9d2ce73;
+    --error-text: #ff6b73;
+    --error-border: #ff6b73;
+    --error-bg: oklch(35% 0.12 18.33);
+  }
 }
 
 @theme inline {
@@ -32,8 +54,8 @@
   --color-error-text: var(--error-text);
   --color-error-bg: var(--error-bg);
   --color-error-border: var(--error-border);
-  --shadow-card: 0 16px 32px -8px #0d211926;
-  --shadow-input: 0 0 5px #0d211950;
+  --shadow-card: 0 16px 32px -8px var(--shadow);
+  --shadow-input: 0 0 10px var(--focus-input);
   --color-border: var(--border);
 }
 
