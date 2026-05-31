@@ -26,7 +26,7 @@ A compact Next.js app for matching users with houseplants through a short adapti
 - **Framework:** Next.js
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS 4 / Framer Motion
-- **State manager:** Zustand
+- **State management:** Zustand
 - **Analytics:** Amplitude
 
 ## Run
