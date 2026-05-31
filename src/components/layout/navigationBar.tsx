@@ -56,7 +56,7 @@ export default function NavigationBar({
   };
 
   return (
-    <div className="flex border-t-2 px-4 py-6 md:justify-end bg-secondary gap-4 sticky bottom-0 left-0 right-0 z-10">
+    <div className="flex border-t-2 px-4 py-6 md:justify-end bg-secondary gap-4 sticky bottom-0 left-0 right-0 z-10 xl:rounded-t-3xl">
       {step > 0 && (
         <Button
           onClick={handleBack}
