@@ -21,16 +21,13 @@ A compact Next.js app for matching users with houseplants through a short adapti
 - `src/data/quizSteps.json` — Quiz questions and interstitials
 - `src/data/plans.json` — Subscription options
 
-## Tech
+## Tech Stack
 
-- Next.js 16
-- React 19
-- TypeScript
-- Tailwind CSS 4
-- Framer Motion
-- Zustand
-- React IMask
-- Amplitude
+- **Framework:** Next.js
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS 4 / Framer Motion
+- **State manager:** Zustand
+- **Analytics:** Amplitude
 
 ## Run
 
