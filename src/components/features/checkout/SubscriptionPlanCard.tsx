@@ -1,3 +1,4 @@
+import cn from "classnames";
 import { useQuizStore } from "@/hooks/useQuizStore";
 import { Button } from "../../ui/button";
 import { ISubscriptionPlan } from "@/types/ISubscriptionPlan";
@@ -26,32 +27,34 @@ export default function SubscriptionPlanCard({ plan }: Props) {
     <motion.div
       key={name}
       variants={cardVariants}
+      whileHover={{ scale: 1.01, y: -2 }}
+      onClick={handleSelectPlan}
       custom={animationDirection}
-      className={`flex justify-center col-span-full md:col-span-3 lg:col-span-2 rounded-2xl overflow-hidden border-2 ${isSelected ? "border-accent" : "border-transparent"}`}
+      className={cn(
+        "flex col-span-full md:col-span-3 cursor-pointer lg:col-span-2 w-full flex-col justify-between shadow-card py-8 px-4 rounded-2xl overflow-hidden border-2",
+        {
+          "border-accent": isSelected,
+          "border-transparent": !isSelected,
+        },
+      )}
     >
-      <motion.div
-        whileHover={{ scale: 1.01, y: -2 }}
-        onClick={handleSelectPlan}
-        className="flex w-full flex-col justify-between shadow-card py-8 px-4 border-2"
+      <article>
+        <div className="flex justify-between">
+          <h3 className="text-text text-2xl font-bold">{name}</h3>
+          <span className="text-accent font-bold text-2xl">{price}</span>
+        </div>
+        <div className="flex justify-between mb-6">
+          <span className="text-accent">{condition}</span>
+          <span className="text-accent">{period}</span>
+        </div>
+      </article>
+      <Button
+        onHover={false}
+        color={isSelected ? "active" : "accent"}
+        className="self-center sm:self-end w-full sm:w-75 lg:w-50"
       >
-        <article>
-          <div className="flex justify-between">
-            <h3 className="text-text text-2xl font-bold">{name}</h3>
-            <span className="text-accent font-bold text-2xl">{price}</span>
-          </div>
-          <div className="flex justify-between mb-6">
-            <span className="text-accent">{condition}</span>
-            <span className="text-accent">{period}</span>
-          </div>
-        </article>
-        <Button
-          onHover={false}
-          color={isSelected ? "active" : "accent"}
-          className="self-center sm:self-end w-full sm:w-75 lg:w-50"
-        >
-          {isSelected ? "Selected" : "Select Plan"}
-        </Button>
-      </motion.div>
+        {isSelected ? "Selected" : "Select Plan"}
+      </Button>
     </motion.div>
   );
 }
