@@ -43,7 +43,6 @@
   --color-foreground: var(--foreground);
   --font-serif: var(--font-noto-serif);
   --font-sans: var(--font-jakarta-sans);
-  --font-secondary: var(--font-jakarta-mono);
   --color-text: var(--text);
   --color-text-accent: var(--text-accent);
   --color-primary: var(--primary);
@@ -59,9 +58,13 @@
   --color-border: var(--border);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
 
 h1,
@@ -70,7 +73,6 @@ h3 {
   font-family: var(--font-serif);
 }
 
-body,
 p,
 span,
 button {

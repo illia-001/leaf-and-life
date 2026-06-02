@@ -6,13 +6,14 @@ import { IoChevronBack, IoClose } from "react-icons/io5";
 import quizSteps from "@/data/quizSteps.json";
 import ProgressBar from "../ui/progressBar";
 import Error from "../shared/error";
-import { useQuiz } from "@/hooks/useQuiz";
+import { useQuizStore } from "@/hooks/useQuizStore";
 import { AnimationDirection } from "@/constants/animationDirection";
 import { ROUTES } from "@/constants/Routing";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 export default function TopBar() {
-  const { step, setStep, setAnimationDirection } = useQuiz();
+  const { step, setStep, setAnimationDirection } = useQuizStore();
   const router = useRouter();
   const totalSteps = quizSteps.length;
 
@@ -27,16 +28,10 @@ export default function TopBar() {
     setStep(step - 1);
   };
 
-  const getProgressBarWidth = () => {
-    const widthPercentage = Math.round(((step + 1) / totalSteps) * 100);
-
-    return widthPercentage + "%";
-  };
-
   return (
     <div className="w-full h-16 md:h-18 bg-primary px-2 sticky top-0 z-2">
       <div className="flex justify-between items-center">
-        {step + 1 === totalSteps && (
+        {step === totalSteps && (
           <Button
             name="Back to questions"
             onClick={handleBack}
@@ -45,7 +40,9 @@ export default function TopBar() {
             <IoChevronBack size={25} className="md:size-10" />
           </Button>
         )}
-        <h1 className="text-text text-2xl">Leaf & Life</h1>
+        <Link href={ROUTES.HOME} className="text-text text-2xl font-serif">
+          Leaf & Life
+        </Link>
         <Button
           onClick={handleCloseQuiz}
           name="Close quiz"
@@ -56,8 +53,7 @@ export default function TopBar() {
       </div>
       <ProgressBar
         currentStep={step + 1}
-        totalSteps={quizSteps.length}
-        width={getProgressBarWidth()}
+        totalSteps={totalSteps + 1}
       />
 
       <Error />

@@ -1,4 +1,4 @@
-import { useQuiz } from "@/hooks/useQuiz";
+import { useQuizStore } from "@/hooks/useQuizStore";
 import { quizVariants } from "@/styles/animations/quizVariants";
 import { AnimatePresence, Variants, motion } from "framer-motion";
 import React from "react";
@@ -8,7 +8,7 @@ export default function AnimateItems({
 }: {
   children: React.ReactNode;
 }) {
-  const { animationDirection, step } = useQuiz();
+  const { animationDirection, step } = useQuizStore();
 
   return (
     <AnimatePresence mode="wait" custom={animationDirection}>

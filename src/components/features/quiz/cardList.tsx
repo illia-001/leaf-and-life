@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./card";
-import { useAnswers, useQuiz } from "@/hooks/useQuiz";
+import { useAnswers, useQuizStore } from "@/hooks/useQuizStore";
 import { IQuestion } from "@/types/IQuestion";
 
 import { motion } from "framer-motion";
@@ -16,7 +16,7 @@ interface Props {
 export const CardList: React.FC<Props> = ({ items, id }) => {
   const options = items.options;
   const { setQuizAnswers, setError, setStep, step, setAnimationDirection } =
-    useQuiz();
+    useQuizStore();
   const answers = useAnswers(id) || [];
 
   const handleSetAnswer = (value: string) => {

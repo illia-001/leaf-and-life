@@ -55,8 +55,8 @@ export default function RootLayout({
       className={`${notoSans.variable} ${jakartaSans.variable} antialiased`}
       data-scroll-behavior="smooth"
     >
-      <Amplitude />
       <body className="flex flex-col max-w-7xl mx-auto bg-primary">
+        <Amplitude />
         {children}
       </body>
     </html>

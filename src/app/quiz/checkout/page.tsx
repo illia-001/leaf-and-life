@@ -4,12 +4,14 @@ import AnimateItems from "@/components/shared/animateItems";
 import SubscriptionPlanList from "@/components/features/checkout/SubscriptionPlanList";
 import UserForm from "@/components/features/checkout/Forms/userForm";
 import { useEffect } from "react";
-import { useQuiz } from "@/hooks/useQuiz";
+import { useQuizStore } from "@/hooks/useQuizStore";
 import { ROUTES } from "@/constants/Routing";
 import { useRouter } from "next/navigation";
+import plans from "@/data/plans.json";
+
 
 export default function Checkout() {
-  const { answers } = useQuiz();
+  const { answers } = useQuizStore();
   const router = useRouter();
 
   const hasAnswers = answers && Object.keys(answers).length > 0;
@@ -31,7 +33,7 @@ export default function Checkout() {
           subscription boxes.
         </p>
         <AnimateItems>
-          <SubscriptionPlanList />
+          <SubscriptionPlanList plans={plans} />
         </AnimateItems>
       </div>
       <UserForm />

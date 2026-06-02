@@ -1,3 +1,4 @@
+import amplitude from "@/amplitude/amplitude";
 import { AnimationDirection } from "@/constants/animationDirection";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
@@ -6,12 +7,12 @@ interface State {
   answers: Record<string, string[]>;
   error: string | null;
   step: number;
-  animationDirection: number;
+  animationDirection: AnimationDirection;
 }
 
 interface Quiz extends State {
   setError: (message: string | null) => void;
-  setAnimationDirection: (direction: number) => void;
+  setAnimationDirection: (direction: AnimationDirection) => void;
   setStep: (step: number) => void;
   setQuizAnswers: (id: string, answer: string[]) => void;
   resetQuizState: () => void;
@@ -24,20 +25,18 @@ const initialState: State = {
   animationDirection: AnimationDirection.FORWARD,
 };
 
-export const useQuiz = create<Quiz>()(
+export const useQuizStore = create<Quiz>()(
   persist(
     (set) => ({
       ...initialState,
 
-      setAnimationDirection: (direction) => {
-        set({ animationDirection: direction });
-      },
+      setAnimationDirection: (direction) =>
+        set({ animationDirection: direction }),
       setStep: (step) => {
-        set({ step });
+        if (step === 0) amplitude.track("quiz_started");
+        set({ step, error: null });
       },
-      setError: (message) => {
-        set({ error: message });
-      },
+      setError: (message) => set({ error: message }),
       setQuizAnswers: (id, answer) => {
         set((state) => ({
           answers: {
@@ -60,4 +59,5 @@ export const useQuiz = create<Quiz>()(
   ),
 );
 
-export const useAnswers = (id: string) => useQuiz((state) => state.answers[id]);
+export const useAnswers = (id: string) =>
+  useQuizStore((state) => state.answers[id]);

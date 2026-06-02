@@ -6,7 +6,7 @@ import cn from "classnames";
 import React from "react";
 import Icon from "../../ui/icon";
 import { cardVariants } from "@/styles/animations/cardVariants";
-import { useQuiz } from "@/hooks/useQuiz";
+import { useQuizStore } from "@/hooks/useQuizStore";
 
 interface Props {
   option: {
@@ -25,7 +25,7 @@ export const Card: React.FC<Props> = ({
   onSelect,
 }) => {
   const { label, value } = option;
-  const { animationDirection } = useQuiz();
+  const { animationDirection } = useQuizStore();
 
   return (
     <motion.div

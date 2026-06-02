@@ -1,10 +1,14 @@
 import { motion } from "framer-motion";
 
 import { listVariants } from "@/styles/animations/listVariants";
-import plans from "@/data/plans.json";
 import SubscriptionPlanCard from "./SubscriptionPlanCard";
+import { ISubscriptionPlan } from "@/types/ISubscriptionPlan";
 
-export default function SubscriptionPlanList() {
+interface Props {
+  plans: ISubscriptionPlan[];
+}
+
+export default function SubscriptionPlanList({plans}: Props) {
   return (
     <motion.div
       variants={listVariants}

@@ -3,8 +3,8 @@
 import { Button } from "@/components/ui/button";
 import Header from "@/components/layout/header";
 import Image from "next/image";
-import howItWorks from "@/data/howItQorks.json";
-import whyLeafAndLife from "@/data/whyLeafeAndLife.json";
+import howItWorks from "@/data/howItWorks.json";
+import whyLeafAndLife from "@/data/whyLeafAndLife.json";
 import Icon from "@/components/ui/icon";
 import Footer from "@/components/layout/footer";
 import { useRouter } from "next/navigation";
@@ -22,16 +22,13 @@ export default function Home() {
     <>
       <Header />
       <div className="col-span-full bg-primary flex justify-center z-1 ">
-        <div className="w-full sm:w-100">
+        <div className="relative w-full aspect-square max-w-lg">
           <Image
-            width={500}
-            height={0}
-            sizes="100vw"
-            style={{ width: "100%", height: "auto" }}
+            fill
             src={homePageImage}
             alt="home-page-image"
             loading="eager"
-            className="sm:rounded-full z-2"
+            className="sm:rounded-full z-2 object-cover"
           />
         </div>
       </div>
@@ -48,24 +45,24 @@ export default function Home() {
         </section>
 
         <section className="z-2 rounded-2xl flex flex-col col-span-3 w-full items-center px-4 py-12 gap-12 bg-secondary mb-20">
-          <h1 className="text-3xl text-text text-center font-semibold">
+          <h2 className="text-3xl text-text text-center font-semibold">
             How it Works
-          </h1>
+          </h2>
           {howItWorks.map((item) => (
             <article key={item.title} className="flex flex-col items-center">
               <div className="flex items-center justify-center w-16 h-16 bg-bg-icon rounded-full mb-4">
                 <Icon iconUrl={item.icon} classNames="bg-accent" size={30} />
               </div>
-              <h2 className="text-2xl text-text mb-2">{item.title}</h2>
+              <h3 className="text-2xl text-text mb-2">{item.title}</h3>
               <p className="text-text-accent text-center">{item.description}</p>
             </article>
           ))}
         </section>
 
         <section className="rounded-2xl flex flex-col md:col-span-3 items-center gap-12 mb-20 px-4 py-12 bg-secondary">
-          <h1 className="text-text font-semibold text-3xl">
+          <h2 className="text-text font-semibold text-3xl">
             Why Leaf & Life
-          </h1>
+          </h2>
           {whyLeafAndLife.map((item) => (
             <article
               key={item.title}
@@ -73,20 +70,20 @@ export default function Home() {
             >
               <Icon iconUrl={item.icon} classNames="bg-accent" />
 
-              <h2 className="text-text text-sm font-semibold pt-2">
+              <h3 className="text-text text-sm font-semibold pt-2">
                 {item.title}
-              </h2>
+              </h3>
               <p className="text-text-accent">{item.description}</p>
             </article>
           ))}
         </section>
         <section className="rounded-2xl bg-accent flex col-span-full flex-col items-center px-4 py-24 gap-6 w-full shadow-card">
-          <h1 className="text-3xl text-center w-63">
+          <h2 className="text-3xl text-center w-63">
             Ready to find your match?
-          </h1>
-          <h2 className="text-secondary text-center">
-            Start your journey toward a greener, more peaceful home today.
           </h2>
+          <h3 className="text-secondary text-center">
+            Start your journey toward a greener, more peaceful home today.
+          </h3>
           <Button onClick={handleClickButton} className="px-4" color="active">
             Start Quiz
           </Button>

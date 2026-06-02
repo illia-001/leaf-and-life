@@ -14,33 +14,28 @@ interface Checkout extends State {
   setSubscriptionPlan: (plan: ISubscriptionPlan | null) => void;
 }
 
+const defaultUserData: IUserData = {
+  fullName: "",
+  email: "",
+  phone: "",
+  address: "",
+};
+
 const initialState: State = {
-  userData: {
-    fullName: "",
-    phone: "",
-    email: "",
-    address: "",
-  },
+  userData: defaultUserData,
   subscriptionPlan: defaultPlan,
 };
 
-export const useCheckout = create<Checkout>()(
+export const useCheckoutStore = create<Checkout>()(
   persist(
     (set) => ({
       ...initialState,
-      setUserData: (userData) => {
-        set({ userData });
-      },
-      setSubscriptionPlan: (plan) => {
-        set({ subscriptionPlan: plan });
-      },
+      setUserData: (userData: Partial<IUserData>) =>
+        set((state) => ({ userData: { ...state.userData, ...userData } })),
+      setSubscriptionPlan: (plan) => set({ subscriptionPlan: plan }),
     }),
     {
       name: "user-data",
-      partialize: (state) => ({
-        userData: state.userData,
-        subscriptionPlan: state.subscriptionPlan,
-      }),
     },
   ),
 );

@@ -1,4 +1,4 @@
-import { IInterstitial } from "@/types/IInterstitialt";
+import { IInterstitial } from "@/types/IInterstitial";
 import Image from "next/image";
 import Icon from "../../ui/icon";
 

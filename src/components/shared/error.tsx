@@ -1,11 +1,11 @@
 "use client";
-import { useQuiz } from "@/hooks/useQuiz";
+import { useQuizStore } from "@/hooks/useQuizStore";
 import { useEffect } from "react";
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import { errorVariants } from "@/styles/animations/errorVariants";
 
 export default function Error() {
-  const { error, setError } = useQuiz();
+  const { error, setError } = useQuizStore();
 
   useEffect(() => {
     if (!error) {

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Loader from "../../ui/loader";
 import { IoCheckmarkDoneCircleSharp, IoClose } from "react-icons/io5";
 import { useRouter } from "next/navigation";
-import { useQuiz } from "@/hooks/useQuiz";
+import { useQuizStore } from "@/hooks/useQuizStore";
 import amplitude from "@/amplitude/amplitude";
 import { Button } from "@/components/ui/button";
 import { ROUTES } from "@/constants/Routing";
@@ -15,7 +15,7 @@ interface Props {
 export default function CheckoutModal({ isVisible }: Props) {
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
-  const { resetQuizState } = useQuiz();
+  const { resetQuizState } = useQuizStore();
 
   useEffect(() => {
     const timer = setTimeout(() => {

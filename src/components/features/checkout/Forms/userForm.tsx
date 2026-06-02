@@ -1,30 +1,28 @@
 import { IMaskInput } from "react-imask";
-import { useQuiz } from "@/hooks/useQuiz";
+import { useQuizStore } from "@/hooks/useQuizStore";
 import { Button } from "../../../ui/button";
-
-import quizStep from "@/data/quizSteps.json";
 import PaymentForm from "./paymentForm";
 import React, { useState } from "react";
 import CheckoutModal from "../checkoutModal";
 import { IUserData } from "@/types/IUserData";
 import Icon from "../../../ui/icon";
-import { useCheckout } from "@/hooks/useChackout";
 import amplitude from "@/amplitude/amplitude";
+import { useCheckoutStore } from "@/hooks/useCheckoutStore";
+import { userFormFields } from "@/constants/userFormFields";
 
 export default function UserForm() {
-  const { setError } = useQuiz();
-  const { userData, subscriptionPlan, setUserData } = useCheckout();
+  const { setError } = useQuizStore();
+  const { userData, subscriptionPlan, setUserData } = useCheckoutStore();
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [userInfo, setUserInfo] = useState<IUserData>(userData);
 
-  const formData = quizStep.at(-1);
-  const fields = formData?.fields;
+  const fields = userFormFields;
 
   const handleChangeData = (value: string, id: string) => {
     setUserInfo((prev) => ({ ...prev, [id]: value }));
   };
 
-  const handleSumbit = (event: React.SubmitEvent) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!subscriptionPlan) {
       setError("Please choose plan!");
@@ -42,12 +40,12 @@ export default function UserForm() {
       <form
         id="form"
         className="grid grid-cols-1 md:grid-cols-6 gap-8 max-w-4xl col-span-full bg-primary items-start"
-        onSubmit={handleSumbit}
+        onSubmit={handleSubmit}
       >
         <section className="grid grid-cols-1 grid-rows-[auto_1fr] gap-4 md:col-span-3 max-w-100 justify-self-center md:justify-self-start">
-          <h1 className="text-text text-2xl text-left font-semibold min-h-16 flex items-center">
-            {formData?.question}
-          </h1>
+          <h2 className="text-text text-2xl text-left font-semibold min-h-16 flex items-center">
+            Where should we send your personalized PlantBox?
+          </h2>
 
           <div className="flex flex-col gap-4 w-full">
             {fields?.map((item) => {
@@ -69,7 +67,7 @@ export default function UserForm() {
                         placeholder={item.placeholder}
                         minLength={item.validation.minLength}
                         mask={item.validation.mask}
-                        autoComplete={item.autoComplite}
+                        autoComplete={item.autoComplete}
                         pattern={item.validation.pattern}
                         required={item.required}
                         onAccept={(_, maskRef) =>
@@ -83,7 +81,7 @@ export default function UserForm() {
                         className="h-13 flex-1 order-2 outline-none text-text peer bg-transparent"
                         placeholder={item.placeholder}
                         minLength={item.validation.minLength}
-                        autoComplete={item.autoComplite}
+                        autoComplete={item.autoComplete}
                         pattern={item.validation.pattern}
                         required={item.required}
                         // Використовуємо стандартний onChange

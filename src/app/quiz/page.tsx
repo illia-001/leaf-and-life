@@ -1,30 +1,23 @@
 "use client";
 
 import quizSteps from "@/data/quizSteps.json";
-import { IInterstitial } from "@/types/IInterstitialt";
 import { IQuestion } from "@/types/IQuestion";
-import { useQuiz } from "@/hooks/useQuiz";
+import { useQuizStore } from "@/hooks/useQuizStore";
 import { QuestionContent } from "@/components/features/quiz/questionContent";
 import { InterstitialContent } from "@/components/features/quiz/interstitialContent";
 import { Preloader } from "@/components/ui/preloader";
 import AnimateItems from "@/components/shared/animateItems";
 import { IItemType } from "@/types/IItemType";
 import NavigationBar from "@/components/layout/navigationBar";
-import amplitude from "@/amplitude/amplitude";
-import { useEffect } from "react";
+import { IInterstitial } from "@/types/IInterstitial";
 
 export default function Quiz() {
-  const { step } = useQuiz();
+  const { step } = useQuizStore();
 
-  const id = quizSteps[step].id;
-  const item = quizSteps.find((item) => item.id === id);
-  const totalSteps = quizSteps.length - 1;
-  
-  useEffect(() => {
-    if (step === 0) {
-      amplitude.track('quiz_started');
-    }
-  }, [step])
+  const totalSteps = quizSteps.length;
+  const item = quizSteps[step];
+  const id = item?.id || quizSteps[0].id;
+  console.log("Current step:", step, "Total steps:", totalSteps);
 
   return (
     <>

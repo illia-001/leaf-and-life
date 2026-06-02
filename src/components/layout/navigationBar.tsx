@@ -1,6 +1,6 @@
 import { IoArrowBack } from "react-icons/io5";
 import { Button } from "../ui/button";
-import { useAnswers, useQuiz } from "@/hooks/useQuiz";
+import { useAnswers, useQuizStore } from "@/hooks/useQuizStore";
 import { IItemType } from "@/types/IItemType";
 import { useEffect } from "react";
 import amplitude from "@/amplitude/amplitude";
@@ -19,7 +19,7 @@ export default function NavigationBar({
   buttonLabel,
   totalSteps,
 }: Props) {
-  const { step, setError, setAnimationDirection, setStep } = useQuiz();
+  const { step, setError, setAnimationDirection, setStep } = useQuizStore();
   const answers = useAnswers(id);
 
   useEffect(() => {
@@ -39,7 +39,11 @@ export default function NavigationBar({
       setError("Choose the answer!");
       return;
     }
-    
+
+    if (step === totalSteps) {
+      amplitude.track("checkout_viewed");
+    }
+
     amplitude.track("quiz_step_completed", {
       step_number: step + 1,
       question_title: id,
@@ -48,10 +52,6 @@ export default function NavigationBar({
     if (step < totalSteps) {
       setAnimationDirection(AnimationDirection.FORWARD);
       setStep(step + 1);
-    }
-
-    if (step === totalSteps - 1) {
-      amplitude.track("checkout_viewed");
     }
   };
 
@@ -68,7 +68,11 @@ export default function NavigationBar({
         </Button>
       )}
 
-      <Button color='accent' onClick={handleSubmit} className="w-full h-13 md:w-75">
+      <Button
+        color="accent"
+        onClick={handleSubmit}
+        className="w-full h-13 md:w-75"
+      >
         {buttonLabel}
       </Button>
     </div>
