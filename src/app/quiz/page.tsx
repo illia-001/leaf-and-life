@@ -17,7 +17,6 @@ export default function Quiz() {
   const totalSteps = quizSteps.length;
   const item = quizSteps[step];
   const id = item?.id || quizSteps[0].id;
-  console.log("Current step:", step, "Total steps:", totalSteps);
 
   return (
     <>
