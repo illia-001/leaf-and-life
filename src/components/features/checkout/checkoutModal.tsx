@@ -4,9 +4,9 @@ import Loader from "../../ui/loader";
 import { IoCheckmarkDoneCircleSharp, IoClose } from "react-icons/io5";
 import { useRouter } from "next/navigation";
 import { useQuizStore } from "@/hooks/useQuizStore";
-import amplitude from "@/amplitude/amplitude";
 import { Button } from "@/components/ui/button";
 import { ROUTES } from "@/constants/Routing";
+import { useQuizTracking } from "@/hooks/useQuizTracking";
 
 interface Props {
   isVisible: (status: boolean) => void;
@@ -16,11 +16,12 @@ export default function CheckoutModal({ isVisible }: Props) {
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
   const { resetQuizState } = useQuizStore();
+  const { trackPaymentSubmitted } = useQuizTracking();
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-      amplitude.track("payment_success");
+      trackPaymentSubmitted();
     }, 2000);
 
     return () => clearTimeout(timer);

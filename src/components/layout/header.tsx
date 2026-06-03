@@ -12,7 +12,7 @@ export default function Header() {
 
   return (
     <header className="flex z-1 col-span-full justify-between items-center h-17 gap-4 w-full px-4 bg-primary">
-      <Link href={'/'} className="font-semibold font-serif text-text text-2xl">
+      <Link href={ROUTES.HOME} className="font-semibold font-serif text-text text-2xl">
         Leaf & Life
       </Link>
 

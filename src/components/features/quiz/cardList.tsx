@@ -14,7 +14,7 @@ interface Props {
 }
 
 export const CardList: React.FC<Props> = ({ items, id }) => {
-  const options = items.options;
+  const { options, type } = items;
   const { setQuizAnswers, setError, setStep, step, setAnimationDirection } =
     useQuizStore();
   const answers = useAnswers(id) || [];
@@ -22,13 +22,13 @@ export const CardList: React.FC<Props> = ({ items, id }) => {
   const handleSetAnswer = (value: string) => {
     setError(null);
 
-    if (items.type === IItemType.SINGLE) {
+    if (type === IItemType.SINGLE) {
       setQuizAnswers(id, [value]);
       setAnimationDirection(AnimationDirection.FORWARD);
       setStep(step + 1);
     }
 
-    if (items.type === IItemType.MULTIPLE) {
+    if (type === IItemType.MULTIPLE) {
       if (answers.includes(value)) {
         const actualAnswers = answers.filter((answer) => answer !== value);
         setQuizAnswers(id, [...actualAnswers]);
@@ -48,10 +48,10 @@ export const CardList: React.FC<Props> = ({ items, id }) => {
     >
       {options.map((option) => (
         <Card
-          key={option.label}
+          key={option.value}
           option={option}
           icon={option.icon}
-          isChecked={answers?.includes(option.value) || false}
+          isChecked={answers.includes(option.value)}
           onSelect={handleSetAnswer}
         />
       ))}

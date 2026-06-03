@@ -6,15 +6,16 @@ import React, { useState } from "react";
 import CheckoutModal from "../checkoutModal";
 import { IUserData } from "@/types/IUserData";
 import Icon from "../../../ui/icon";
-import amplitude from "@/amplitude/amplitude";
 import { useCheckoutStore } from "@/hooks/useCheckoutStore";
 import { userFormFields } from "@/constants/userFormFields";
+import { useQuizTracking } from "@/hooks/useQuizTracking";
 
 export default function UserForm() {
   const { setError } = useQuizStore();
   const { userData, subscriptionPlan, setUserData } = useCheckoutStore();
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [userInfo, setUserInfo] = useState<IUserData>(userData);
+  const { trackPaymentSubmitted } = useQuizTracking();
 
   const fields = userFormFields;
 
@@ -29,7 +30,7 @@ export default function UserForm() {
       return;
     }
 
-    amplitude.track("payment_submitted");
+    trackPaymentSubmitted();
 
     setIsModalVisible(true);
     setUserData(userInfo);

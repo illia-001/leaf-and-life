@@ -38,7 +38,7 @@ export default function Quiz() {
           totalSteps={totalSteps}
           buttonLabel={item?.buttonLabel}
           id={id}
-          type={item?.type}
+          type={item?.type as IItemType}
         />
       )}
     </>

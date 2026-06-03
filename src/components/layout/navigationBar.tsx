@@ -3,11 +3,11 @@ import { Button } from "../ui/button";
 import { useAnswers, useQuizStore } from "@/hooks/useQuizStore";
 import { IItemType } from "@/types/IItemType";
 import { useEffect } from "react";
-import amplitude from "@/amplitude/amplitude";
 import { AnimationDirection } from "@/constants/animationDirection";
+import { useQuizTracking } from "@/hooks/useQuizTracking";
 
 interface Props {
-  type?: string;
+  type?: IItemType;
   id: string;
   buttonLabel?: string;
   totalSteps: number;
@@ -21,6 +21,7 @@ export default function NavigationBar({
 }: Props) {
   const { step, setError, setAnimationDirection, setStep } = useQuizStore();
   const answers = useAnswers(id);
+  const { trackCheckoutViewed, trackStepCompleted } = useQuizTracking();
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
@@ -41,13 +42,10 @@ export default function NavigationBar({
     }
 
     if (step === totalSteps) {
-      amplitude.track("checkout_viewed");
+      trackCheckoutViewed();
+    } else {
+      trackStepCompleted(step, id);
     }
-
-    amplitude.track("quiz_step_completed", {
-      step_number: step + 1,
-      question_title: id,
-    });
 
     if (step < totalSteps) {
       setAnimationDirection(AnimationDirection.FORWARD);

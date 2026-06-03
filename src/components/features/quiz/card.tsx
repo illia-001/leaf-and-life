@@ -15,7 +15,7 @@ interface Props {
   };
   icon: string;
   isChecked: boolean;
-  onSelect: (label: string) => void;
+  onSelect: (value: string) => void;
 }
 
 export const Card: React.FC<Props> = ({
@@ -37,6 +37,8 @@ export const Card: React.FC<Props> = ({
       <motion.button
         whileHover={{ scale: 1.01, y: -2 }}
         whileTap={{ scale: 0.99 }}
+        aria-pressed={isChecked}
+        aria-label={value}
         onClick={() => onSelect(value)}
         className={cn(
           "space-y-3 w-full max-w-175 border-2 transition-all duration-300 ease-out cursor-pointer h-auto bg-secondary rounded-3xl shadow-card p-6",
@@ -59,7 +61,7 @@ export const Card: React.FC<Props> = ({
             )}
           </div>
         </div>
-        <h1 className="text-text text-left text-2xl">{value}</h1>
+        <h2 className="text-text text-left text-2xl">{value}</h2>
 
         <p className="text-accent text-left">{label}</p>
       </motion.button>

@@ -5,7 +5,14 @@ export const ROUTES = {
   SUSTAINABILITY: "/sustainability",
   FAQ: "/faq",
   PRIVACY: "/privacy",
-  shippingPolicy: "/shipping-policy",
+  SHIPPING_POLICY: "/shipping-policy",
   TERMS: "/terms",
 } as const;
 
+export const footerRouting = [
+  { href: ROUTES.SUSTAINABILITY, name: "Sustainability" },
+  { href: ROUTES.FAQ, name: "FAQ" },
+  { href: ROUTES.PRIVACY, name: "Privacy" },
+  { href: ROUTES.SHIPPING_POLICY, name: "Shipping Policy" },
+  { href: ROUTES.TERMS, name: "Terms of Service" },
+] as const;

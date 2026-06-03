@@ -5,6 +5,12 @@ import { useRouter } from "next/navigation";
 import { ROUTES } from "@/constants/Routing";
 import Icon from "./icon";
 
+const analysisItems = [
+  { icon: "https://res.cloudinary.com/dryw0xncr/image/upload/v1779801795/sun-2-svgrepo-com_m59vnc.svg", label: "Lighting Analysis", size: 24 },
+  { icon: "https://res.cloudinary.com/dryw0xncr/image/upload/v1780162048/Icon_33_jphe8f.svg", label: "Space Mapping", size: 20 },
+  { icon: "https://res.cloudinary.com/dryw0xncr/image/upload/v1779798864/guidance_yrnamb.svg", label: "Matching Flora", size: 24 },
+];
+
 export const Preloader = () => {
   const router = useRouter();
 
@@ -14,7 +20,7 @@ export const Preloader = () => {
     }, 3000);
 
     return () => clearTimeout(timer);
-  });
+  }, []);
 
   return (
     <div className="flex flex-col items-center gap-10">
@@ -28,44 +34,27 @@ export const Preloader = () => {
       />
 
       <article className="flex flex-col gap-4 items-center">
-        <h1 className="text-text text-3xl text-center">
+        <h2 className="text-text text-3xl text-center">
           Curating your perfect botanical matches...
-        </h1>
+        </h2>
         <p className="text-accent text-center mb-5 sm:mb-10">
           We&apos;re analyzing your lighting, space, and care style to find
           plants that will thrive in your home.
         </p>
         <div className="flex flex-col md:flex-row gap-4">
-          <div className="flex gap-2 text-accent items-center text-sm font-semibold">
+          {analysisItems.map((item) => (
+            <div key={item.label} className="flex gap-2 text-accent items-center text-sm font-semibold">
             <div className="bg-accent rounded-full w-8 aspect-square flex justify-center items-center">
               <Icon
-                iconUrl="https://res.cloudinary.com/dryw0xncr/image/upload/v1779801795/sun-2-svgrepo-com_m59vnc.svg"
+                iconUrl={item.icon}
                 classNames="bg-bg-icon"
-                size={24}
+                size={item.size}
               />
             </div>
-            Lighting Analysis
+            {item.label}
           </div>
-          <div className="flex gap-2 text-accent items-center text-sm font-semibold">
-            <div className="bg-accent rounded-full w-8 aspect-square flex justify-center items-center">
-              <Icon
-                iconUrl="https://res.cloudinary.com/dryw0xncr/image/upload/v1780162048/Icon_33_jphe8f.svg"
-                classNames="bg-bg-icon"
-                size={20}
-              />
-            </div>
-            Space Mapping
-          </div>
-          <div className="flex gap-2 text-accent items-center text-sm font-semibold">
-            <div className="bg-accent rounded-full w-8 aspect-square flex justify-center items-center">
-              <Icon
-                iconUrl="https://res.cloudinary.com/dryw0xncr/image/upload/v1779798864/guidance_yrnamb.svg"
-                classNames="bg-bg-icon"
-                size={24}
-              />
-            </div>
-            Matching Flora
-          </div>
+          ))}
+
         </div>
       </article>
       <Loader />

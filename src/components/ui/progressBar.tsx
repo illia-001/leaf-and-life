@@ -4,17 +4,13 @@ interface Props {
 }
 
 export default function ProgressBar({ currentStep, totalSteps }: Props) {
-  const getProgressBarWidth = () => {
-    const widthPercentage = Math.round((currentStep / totalSteps) * 100);
-
-    return widthPercentage + "%";
-  };
+  const progressBarWidth =  Math.round((currentStep / totalSteps) * 100) + "%";
 
   return (
     <>
       <div
         className="h-1 bg-accent absolute bottom-0 rounded-xl left-0 transition-all ease-out duration-300"
-        style={{ width: getProgressBarWidth() }}
+        style={{ width: progressBarWidth }}
       />
       <div className="text-primary text-sm font-semibold bg-accent px-2 text-center rounded-tr-md absolute left-0 bottom-0">
         Step {currentStep} of {totalSteps}
