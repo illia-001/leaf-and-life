@@ -2,7 +2,7 @@ import TopBar from "@/components/layout/topBar";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Find Your Perfect Plant Subscription | Leaf & Life Quiz",
+  title: "Find Your Perfect Plant Subscription",
   description:
     "Take our quick 2-minute plant care quiz! Tell us about your space, lighting, and lifestyle, and we'll curate a personalized PlantBox just for you.",
   keywords: [
